@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 588.47455 504.40677" width="90" height="90">
+  <defs>
+    <filter id="inset-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feComponentTransfer in="SourceAlpha">
+        <feFuncA type="table" tableValues="1 0" />
+      </feComponentTransfer>
+      <feGaussianBlur stdDeviation="3"/>
+      <feOffset dx="5" dy="5" result="offsetblur"/>
+      <feFlood floodColor="rgb(20, 0, 0)" result="color"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feComposite in2="SourceAlpha" operator="in" />
+      <feMerge>
+        <feMergeNode in="SourceGraphic" />
+        <feMergeNode />
+      </feMerge>
+    </filter>
+  </defs>
+  <defs>
+    <path d="M360 300l40 80H240l40-80 40-80 40 80z" id="a"/>
+    <path d="M380 340l20 40h-80l20-40 20-40 20 40z" id="b"/>
+    <path d="M376 344c0 11.04-8.96 20-20 20s-20-8.96-20-20 8.96-20 20-20 20 8.96 20 20z" id="c"/>
+    <path d="M358.67 342.67c0 11.03-8.97 20-20 20-11.04 0-20-8.97-20-20 0-11.04 8.96-20 20-20 11.03 0 20 8.96 20 20z" id="d"/>
+  </defs>
+  <g visibility="inherit" transform="matrix(3.28946 0 0 2.9056 -755.678 -620.49)" filter="url(#inset-shadow)">
+    <use xlink:href="#a" width="100%" height="100%" fill="#d75448"/>
+    <use xlink:href="#b" width="100%" height="100%" fill="#a43026"/>
+    <use xlink:href="#c" width="100%" height="100%" fill="#d75448"/>
+    <use xlink:href="#d" width="100%" height="100%" fill="#a43026"/>
+  </g>
+  <path fill="none" d="M9.5 8.14h569.48V501.7H9.48z"/>
+  <path fill="none" d="M24.4 12.2h376.96v268.47H24.4zm378.3 179h75.94V259H402.7z"/>
+  <rect width="588.47" height="504.41" ry="244.07" fill="none"/>
+</svg>
