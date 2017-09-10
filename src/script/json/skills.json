@@ -1,0 +1,115 @@
+[
+  {
+    "skillName": "HTML",
+    "skillImage": {
+        "skillImageLarge": "../dist/images/html5-large.png",
+        "skillImageMedium": "../dist/images/html5-medium.png",
+        "skillImageSmall": "../dist/images/html5-small.png"
+      },
+  },
+  {
+    "skillName": "CSS",
+    "skillImage": {
+        "skillImageLarge": "../dist/images/css3-large.png",
+        "skillImageMedium": "../dist/images/css3-medium.png",
+        "skillImageSmall": "../dist/images/css3-small.png"
+      },
+  },
+  {
+    "skillName": "Javascript",
+    "skillImage": {
+        "skillImageLarge": "../dist/images/javascript-large.png",
+        "skillImageMedium": "../dist/images/javascript-medium.png",
+        "skillImageSmall": "../dist/images/javascript-small.png"
+      },
+  },
+  {
+    "skillName": "Gulp",
+    "skillImage": {
+        "skillImageLarge": "../dist/images/gulp.svg",
+        "skillImageMedium": "../dist/images/gulp.svg",
+        "skillImageSmall": "../dist/images/gulp.svg"
+      },
+  },
+  {
+    "skillName": "AJAX",
+    "skillImage": {
+        "skillImageLarge": "../dist/images/ajax-large.png",
+        "skillImageMedium": "../dist/images/ajax-medium.png",
+        "skillImageSmall": "../dist/images/ajax-small.png"
+      },
+  },
+  {
+    "skillName": "Git",
+    "skillImage": {
+        "skillImageLarge": "../dist/images/git-large.png",
+        "skillImageMedium": "../dist/images/git-medium.png",
+        "skillImageSmall": "../dist/images/git-small.png"
+      },
+  },
+  {
+    "skillName": "Jquery",
+    "skillImage": {
+        "skillImageLarge": "../dist/images/jquery-large.png",
+        "skillImageMedium": "../dist/images/jquery-medium.png",
+        "skillImageSmall": "../dist/images/jquery-small.png"
+      },
+  },
+  {
+    "skillName": "Knockout JS",
+    "skillImage": {
+        "skillImageLarge": "../dist/images/knockoutjs.svg",
+        "skillImageMedium": "../dist/images/knockoutjs.svg",
+        "skillImageSmall": "../dist/images/knockoutjs.svg"
+      },
+  },
+  {
+    "skillName": "SASS",
+    "skillImage": {
+        "skillImageLarge": "../dist/images/sass.svg",
+        "skillImageMedium": "../dist/images/sass.svg",
+        "skillImageSmall": "../dist/images/sass.svg"
+      },
+  },
+  {
+    "skillName": "React JS",
+    "skillImage": {
+        "skillImageLarge": "../dist/images/react.svg",
+        "skillImageMedium": "../dist/images/react.svg",
+        "skillImageSmall": "../dist/images/react.svg"
+      },
+  },
+  {
+    "skillName": "Redux",
+    "skillImage": {
+        "skillImageLarge": "../dist/images/redux-large.png",
+        "skillImageMedium": "../dist/images/redux-medium.png",
+        "skillImageSmall": "../dist/images/redux-small.png"
+      },
+  },
+  {
+    "skillName": "Jasmine",
+    "skillImage": {
+        "skillImageLarge": "../dist/images/jasmine_logo-large.png",
+        "skillImageMedium": "../dist/images/jasmine_logo-medium.png",
+        "skillImageSmall": "../dist/images/jasmine_logo-small.png"
+      },
+  },
+  {
+    "skillName": "Adobe Illustrator",
+    "skillImage": {
+        "skillImageLarge": "../dist/images/illustrator-large.png",
+        "skillImageMedium": "../dist/images/illustrator-medium.png",
+        "skillImageSmall": "../dist/images/illustrator-small.png"
+      },
+  },
+  {
+    "skillName": "Bootstrap",
+    "skillImage": {
+        "skillImageLarge": "../dist/images/bootstrap-large.png",
+        "skillImageMedium": "../dist/images/bootstrap-medium.png",
+        "skillImageSmall": "../dist/images/bootstrap-small.png"
+      },
+  },
+
+]

@@ -1,0 +1,54 @@
+/* PROJECTS */
+
+[
+  {
+    "projectTitle": "React Redux Portfolio",
+    "projectDescription": "Project utilizing React, Redux, HTML, Gulp, Illustrator, CSS and SASS",
+    "projectImage": {
+      "projectImageLarge": "../dist/images/portfolio-large.png",
+      "projectImageMedium": "../dist/images/portfolio-medium.png",
+      "projectImageSmall": "../dist/images/portfolio-small.png"
+    },
+    "projectLink": "https://brontebronte.github.io/"
+  },
+  {
+    "projectTitle": "Google Map API",
+    "projectDescription": "Project which includes Google API, Foursquare API and Knockout JS, part of Udacity",
+    "projectImage": {
+      "projectImageLarge": "../dist/images/googlemap-large.png",
+      "projectImageMedium": "../dist/images/googlemap-medium.png",
+      "projectImageSmall": "../dist/images/googlemap-small.png"
+    },
+    "projectLink": "https://github.com/brontebronte/googlemap"
+  },
+  {
+    "projectTitle": "Feed Reader",
+    "projectDescription": "Utilizing Jasmine, as part of Udacity course",
+    "projectImage": {
+      "projectImageLarge": "../dist/images/jasmine-large.png",
+      "projectImageMedium": "../dist/images/jasmine-medium.png",
+      "projectImageSmall": "../dist/images/jasmine-small.png"
+    },
+    "projectLink": "https://github.com/brontebronte/feedreader"
+  },
+  {
+    "projectTitle": "Web Optimization",
+    "projectDescription": "Optimizing web given by Udacity, utilizing google developer tool and Gulp",
+    "projectImage": {
+      "projectImageLarge": "../dist/images/weboptimize-large.png",
+      "projectImageMedium": "../dist/images/weboptimize-medium.png",
+      "projectImageSmall": "../dist/images/weboptimize-small.png"
+    },
+    "projectLink": "https://github.com/brontebronte/weboptimization"
+  },
+  {
+    "projectTitle": "Frogger Game Arcade",
+    "projectDescription": "Utilizes Javascript Object Orientated Programming, as part of Udacity FEND project",
+    "projectImage": {
+      "projectImageLarge": "../dist/images/gamearcade-large.png",
+      "projectImageMedium": "../dist/images/gamearcade-medium.png",
+      "projectImageSmall": "../dist/images/gamearcade-small.png"
+    },
+    "projectLink": "https://github.com/brontebronte/arcade"
+  }
+]
