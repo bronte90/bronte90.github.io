@@ -1,0 +1,150 @@
+////////////////////////////////
+//   Other Mixin SCSS File   //
+//////////////////////////////
+
+////////////////
+//  WEBKITS  //
+
+  /////////////////////
+  //  1. Transform  //
+  @mixin transform($args...) {
+    -moz-transform: $args;
+    -o-transform: $args;
+    -ms-transform: $args;
+    -webkit-transform: $args;
+    transform: $args;
+  }
+
+  @mixin transformOrigin($args...) {
+    -moz-transform-origin: $args;
+    -o-transform-origin: $args;
+    -ms-transform-origin: $args;
+    -webkit-transform-origin: $args;
+    transform-origin: $args;
+  }
+
+
+
+  //////////////////////
+  //  2. Box-Shadow  //
+  //From: https://gist.github.com/johnferrie/3836468
+  @mixin box-shadow($shadow){
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow
+  }
+  // Example:
+    // @include box-shadow(2px 2px 6px $color)
+    // @include box-shadow(none)
+
+
+  ////////////////////////
+  //  3. Media Queries  //
+  //  media queries  //
+  @mixin mQ($arg) {
+    @media screen and (max-width: $arg) {
+      @content;
+    }
+  }
+
+
+
+  //////////////////////
+  //  4. Transition  //
+  // From: http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
+  @mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+  }
+
+  // Example:
+  // @include transition(color .3s ease);
+
+
+
+  //////////////////
+  //  5. Filter  //
+  @mixin filter($args...) {
+  -webkit-transition: $args;
+  transition: $args;
+  }
+
+
+
+  ///////////////////////////////
+  //  6. Animation Framework  //
+  //Reference: https://www.mrpapercut.com/blog/2016-09-26-keyframe-animations-in-sass
+  @mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+      @content;
+    }
+    @-moz-keyframes #{$animationName} {
+      @content;
+    }
+    @-o-keyframes #{$animationName} {
+      @content;
+    }
+    @keyframes #{$animationName} {
+      @content;
+    }
+  }
+
+  @mixin animate($name, $duration, $iteration, $direction, $fill-mode) {
+    -webkit-animation-duration: $duration;
+       -moz-animation-duration: $duration;
+         -ms-animation-duration: $duration;
+           -o-animation-duration: $duration;
+              animation-duration: $duration;
+    -webkit-animation-iteration-count: $iteration;
+       -moz-animation-iteration-count: $iteration;
+         -ms-animation-iteration-count: $iteration;
+           -o-animation-iteration-count: $iteration;
+              animation-iteration-count: $iteration;
+    -webkit-animation-name: $name;
+       -moz-animation-name: $name;
+         -ms-animation-name: $name;
+           -o-animation-name: $name;
+              animation-name: $name;
+    -webkit-animation-direction: $direction;
+       -moz-animation-direction: $direction;
+         -ms-animation-direction: $direction;
+           -o-animation-direction: $direction;
+              animation-direction: $direction;
+    -webkit-animation-fill-mode: $fill-mode;
+       -moz-animation-fill-mode: $fill-mode;
+         -ms-animation-fill-mode: $fill-mode;
+           -o-animation-fill-mode: $fill-mode;
+              animation-fill-mode: $fill-mode;
+  }
+
+
+  @mixin animation_delay($delay) {
+    -webkit-transition: $delay;
+    -moz-transition: $delay;
+    -ms-transition: $delay;
+    -o-transition: $delay;
+    transition: $delay;
+  }
+
+
+
+/////////////////
+//  POSITION  //
+@mixin absolute_position_center {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+@mixin relative_position_center {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
