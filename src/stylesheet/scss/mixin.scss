@@ -68,8 +68,8 @@
   //////////////////
   //  5. Filter  //
   @mixin filter($args...) {
-  -webkit-transition: $args;
-  transition: $args;
+  -webkit-filter: $args;
+  filter: $args;
   }
 
 
@@ -121,12 +121,12 @@
   }
 
 
-  @mixin animation_delay($delay) {
-    -webkit-transition: $delay;
-    -moz-transition: $delay;
-    -ms-transition: $delay;
-    -o-transition: $delay;
-    transition: $delay;
+  @mixin delay($delay...) {
+    -webkit-animation-delay: $delay;
+    -moz-animation-delay: $delay;
+    -ms-animation-delay: $delay;
+    -o-animation-delay: $delay;
+    animation-delay: $delay;
   }
 
 
@@ -142,9 +142,46 @@
 }
 
 @mixin relative_position_center {
+  display: block;
   position: relative;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
+}
+
+@mixin fixed_position_center {
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+//////////////
+//  FONTS  //
+@mixin title_fonts {
+  color: $titleColor;
+  font-family: $titleFont;
+  font-size: 2em;
+  opacity: 0.8;
+  letter-spacing: 3.5px;
+  width: 200px;
+  text-shadow: $textShadow;
+  @include absolute_position_center;
+  z-index: 1;
+}
+
+@mixin level_fonts {
+  color: $numberColor;
+  @include absolute_position_center;
+  width: 200px;
+}
+
+///////////////////
+//  BACKGROUND  //
+@mixin galaxy {
+  background-image: url("../../dist/images/galaxy-large.jpg");
+  background-size: cover;
+  margin: 0;
 }

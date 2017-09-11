@@ -1,0 +1,108 @@
+.nav {
+  position: fixed;
+  top:0;
+  right:0;
+  left:0;
+  z-index: 2;
+}
+
+.nav__button {
+  opacity: 0.8;
+  width: 0;
+  border-style: solid;
+  border-width: 0 60px 55px 60px;
+  border-color: transparent transparent $seaColor transparent;
+  @include transition (0.2s ease-in-out);
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 0px;
+  color: $titleColor;
+  font-family: $titleFont;
+  text-shadow: $textShadowTwo;
+  letter-spacing: 2px;
+  font-size: 1em;
+  @include transform(translateX(-200px) rotate(180deg));
+  text-align: center;
+  z-index: 3;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+    @include filter($svgShadow);
+    @include transform(translateX(-200px) rotate(180deg) scale(1.1));
+  &:hover .nav__button--icon-open {
+    text-shadow: $textShadow;
+  }
+  }
+}
+
+.nav__button--icon-open,
+.nav__button--icon-close
+{
+  @include transform(rotate(180deg) translate(25px, -28px));
+  position: absolute;
+}
+
+.nav__button--icon-close {
+  display: none;
+}
+
+
+.nav__button--icon-close.active {
+  display: block;
+}
+
+.nav__button.notActive {
+  border-color: transparent transparent $peachColor transparent;
+}
+
+.nav__button.active .nav__button--icon-open {
+  display: none;
+}
+
+.nav__list-container {
+  height: $containerHeight;
+  width: 100%;
+  background-color: black;
+  color: $titleColor;
+  font-family: $titleFont;
+  margin: 0;
+  font-size: 1.8em;
+  opacity: 0.9;
+  @include transition(0.3s ease-in);
+  @include transform(translateY(-800px));
+  @include absolute_position_center;
+}
+
+
+.nav__list {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
+  @include absolute_position_center;
+  @include transform(translateY(150px));
+}
+
+
+.nav__list-container.active {
+  @include transition(0.7s ease-in);
+  @include transform(translateY(0px));
+}
+
+
+
+.nav__list--each {
+  padding: 20px;
+  width: 100%;
+  letter-spacing: 5px;
+  @include transition(0.2s ease-in-out);
+  &:hover {
+    color: $yellowColor;
+    opacity: 1;
+    font-size: 2em;
+    cursor: pointer;
+  }
+}

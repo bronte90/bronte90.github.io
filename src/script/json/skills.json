@@ -102,14 +102,5 @@
         "skillImageMedium": "../dist/images/illustrator-medium.png",
         "skillImageSmall": "../dist/images/illustrator-small.png"
       },
-  },
-  {
-    "skillName": "Bootstrap",
-    "skillImage": {
-        "skillImageLarge": "../dist/images/bootstrap-large.png",
-        "skillImageMedium": "../dist/images/bootstrap-medium.png",
-        "skillImageSmall": "../dist/images/bootstrap-small.png"
-      },
-  },
-
+  }
 ]

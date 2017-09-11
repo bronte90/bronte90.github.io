@@ -1,0 +1,14 @@
+.about {
+@include galaxy;
+height: $containerHeight;
+width: 100%;
+}
+
+.about__level {
+  @include level_fonts;
+}
+
+.about__title {
+  @include title_fonts;
+  @include transform(translate(40px, 520px));
+}

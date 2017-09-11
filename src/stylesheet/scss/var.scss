@@ -7,23 +7,14 @@
 //  FONTS  //
   /////////////////
   //  1. Style  //
-    //  a. Small Screen  //
-
-
-
-    //  b. Medium Screen  //
-
-
-
-    //  c. Large Screen   //
-
+    $titleFont: Avantgarde, sans-serif;
 
 
 
   /////////////////
   //  2. Sizes  //
     //  a. Small Screen  //
-
+    $containerHeight: 800px;
 
 
     //  b. Medium Screen  //
@@ -88,12 +79,36 @@
 
 
 
+  ////////////////
+  //  4. SIZE  //
+    //  a. Small Screen  //
+
+
+
+    //  b. Medium Screen  //
+
+
+
+    //  c. Large Screen   //
+    $windowSize: 52px;
+
+
+
+
 
 
 //////////////
 //  COLOR  //
-
-
+$numberColor: yellow;
+$titleColor: #f6f6f6;
+$opaqueBlack: rgba(0, 0, 0, 0.6);
+$nudeColor:#a88461;
+$nudeTwoColor: #a28d8f;
+$seaColor: #809e8d;
+$peachColor: #ce806c;
+$buttonColor: #545454;
+$blueColor: #779abb;
+$yellowColor: #c1b18f;
 
 ///////////////////
 //  BACKGROUND  //
@@ -103,7 +118,11 @@
 ///////////////
 //  SHADOW  //
 $mainShadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.2), 0 20px 30px 0 rgba(0, 0, 0, 0.19);
-$insetShadow: inset 0 0 10px #000000;
+$insetShadow: inset 10px 10px 46px -4px rgba(0,0,0,0.75);
+$textShadow: 6px 6px 0px rgba(0,0,0,0.2);
+$textShadowTwo: 2px 2px 0px rgba(0,0,0,0.2);
+    //  SVG  //
+    $svgShadow: drop-shadow(10px 10px 15px black);
 
 
 

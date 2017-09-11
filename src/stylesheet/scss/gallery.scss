@@ -1,0 +1,15 @@
+.gallery {
+  margin: 0;
+  height: $containerHeight;
+  background-color: $nudeColor;
+  width: 100%;
+}
+
+.gallery__title {
+  @include title_fonts;
+  @include transform(translate(10px, 520px));
+}
+
+.gallery__level {
+  @include level_fonts;
+}

@@ -1,0 +1,14 @@
+.contact {
+  background-color: $nudeTwoColor;
+  height: $containerHeight;
+  width: 100%;
+}
+
+.contact__level {
+  @include level_fonts;
+}
+
+.contact__title {
+  @include title_fonts;
+  @include transform(translate(10px, 540px));
+}

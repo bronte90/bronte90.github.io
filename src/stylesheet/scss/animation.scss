@@ -1,3 +1,15 @@
 /////////////////////////
 //  Animation  Mixin  //
 ///////////////////////
+@include keyframes(logo_flag) {
+  from {
+    @include relative_position_center;
+  }
+  to {
+    @include transform(rotate(-30deg) translate(9px, 10px));
+  }
+}
+
+@mixin logo_flag {
+  @include animate (logo_flag, 2s, 1, ease-in, forwards);
+}
