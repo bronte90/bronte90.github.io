@@ -1,6 +1,11 @@
 /////////////////////////
 //  Animation  Mixin  //
 ///////////////////////
+
+///////////////
+//  HEADER  //
+
+//  Logo  //
 @include keyframes(logo_flag) {
   from {
     @include relative_position_center;
@@ -12,4 +17,25 @@
 
 @mixin logo_flag {
   @include animate (logo_flag, 2s, 1, ease-in, forwards);
+}
+
+
+
+///////////////
+// CONTACT  //
+@include keyframes(dashing) {
+  from {
+    stroke-dasharray: 3829.83203125;
+    stroke-dashoffset: 3829.83203125;
+    fill: transparent;
+  }
+  to {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 0;
+    fill: $yellowColor;
+  }
+}
+
+@mixin dashing {
+  @include animate (dashing, 3s, 1, cubic-bezier(.26,.85,.86,-0.3), forwards);
 }

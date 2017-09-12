@@ -2,6 +2,8 @@
 @include galaxy;
 height: $containerHeight;
 width: 100%;
+background-color: $opaqueBlack;
+background-blend-mode: hard-light;
 }
 
 .about__level {

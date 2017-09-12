@@ -6,9 +6,39 @@
 
 .contact__level {
   @include level_fonts;
+  @include transform(translate(-40px, 200px));
 }
 
-.contact__title {
-  @include title_fonts;
-  @include transform(translate(10px, 540px));
+.contact__email {
+  color: $titleColor;
+  font-family: $titleFont;
+  @include absolute_position_center;
+  width: 340px;
+  height: 40px;
+  text-shadow: $textShadowTwo;
+  font-size: 0.8em;
+  letter-spacing: 5px;
+  background-color: $nudeTwoColor;
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 20px;
+  text-align: center;
+  padding: 11px;
+  @include transform(translateY(690px));
+  z-index: 4;
+}
+
+
+.contact__text {
+  width: 300px;
+  @include absolute_position_center;
+  z-index: 3;
+  @include transform(translate(-80px, 410px) rotate(10deg));
+}
+
+
+#contact__text--path {
+  stroke: $yellowColor;
+  stroke-width:2.8px;
+  @include dashing;
 }

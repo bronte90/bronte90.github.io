@@ -2,6 +2,7 @@
   background-color: darkgrey;
   width: 100%;
   height: $containerHeight;
+  position: relative;
 }
 
 .header__logo {
@@ -29,35 +30,42 @@
   @include transform(translateY(60px));
   width: 170px;
   @include box-shadow($insetShadow);
+  position: absolute;
 }
 
 .header__house--main {
   width: 270px;
   @include filter($svgShadow);
+  position: absolute;
 }
 
 .header__house--roof {
   width: 270px;
+  position: absolute;
 }
 
 .header__house--window-left {
   @include transform(translate(-26px, 122px));
   width: $windowSize;
+  position: absolute;
 }
 
 .header__house--window-right {
   @include transform(translate(26px, 122px));
   width: $windowSize;
+  position: absolute;
 }
 
 //  Text  //
 .header__level {
   @include level_fonts;
-  @include transform(translate(8px, 60px))
+  @include transform(translate(8px, 60px));
+  position: absolute;
 
 }
 
 .header__title--name {
   @include title_fonts;
   @include transform(translate(25px, 400px));
+  position: absolute;
 }
