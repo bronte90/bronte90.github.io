@@ -1,16 +1,32 @@
 .about {
-@include galaxy;
-height: $containerHeight;
+background-image: url("../../dist/images/galaxy-large.jpg");
+background-size: cover;
+background-position: top center;
+background-attachment: fixed;
+background-repeat: repeat;
+margin: 0;
+height: 1500px;
 width: 100%;
 background-color: $opaqueBlack;
 background-blend-mode: hard-light;
+@include transition(5s ease);
 }
 
 .about__level {
   @include level_fonts;
+  color: $nudeColor;
+  @include transform(translate(-10px, 160px));
 }
 
 .about__title {
   @include title_fonts;
-  @include transform(translate(40px, 520px));
+  @include transform(translate(40px, 500px));
+}
+
+.about__window-box {
+  width: 120px;
+  height:180px;
+  background-color: black;
+  @include absolute_position_center;
+  @include transform(translateY(300px));
 }

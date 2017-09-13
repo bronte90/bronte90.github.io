@@ -1,17 +1,24 @@
+//=====================================================================
+//  C O N T A I N E R
+//=====================================================================
 .nav {
   position: fixed;
   top:0;
   right:0;
   left:0;
-  z-index: 2;
+  z-index: 5;
 }
 
+//=====================================================================
+//  M E N U   B U T T O N
+//=====================================================================
 .nav__button {
   opacity: 0.8;
   width: 0;
   border-style: solid;
   border-width: 0 60px 55px 60px;
   border-color: transparent transparent $seaColor transparent;
+  @include filter($svgShadow);
   @include transition (0.2s ease-in-out);
   position: absolute;
   left: 50%;
@@ -60,6 +67,11 @@
   display: none;
 }
 
+
+
+//=====================================================================
+//  M E N U   L I S T (after click)
+//=====================================================================
 .nav__list-container {
   height: $containerHeight;
   width: 100%;
@@ -91,7 +103,6 @@
   @include transition(0.7s ease-in);
   @include transform(translateY(0px));
 }
-
 
 
 .nav__list--each {

@@ -1,95 +1,20 @@
-/////////////////////////
-//   Variable SCSS    //
-///////////////////////
+//=========================================================================
+//   V A R I A B L E   S C S S
+//=========================================================================
 
 
-//////////////
-//  FONTS  //
-  /////////////////
-  //  1. Style  //
+
+//---------------  F O N T S
+//-----------------------------------------------------------
+
+  //-------------  1. S t y l e  -------------//
     $titleFont: Avantgarde, sans-serif;
 
 
 
-  /////////////////
-  //  2. Sizes  //
-    //  a. Small Screen  //
+
+  //-------------  2. S i z e s  -------------//
     $containerHeight: 800px;
-
-
-    //  b. Medium Screen  //
-
-
-
-    //  c. Large Screen   //
-
-
-
-
-
-
-////////////////
-// SPACINGS  //
-  ///////////////////
-  //  1. Margins  //
-    //  a. Small Screen  //
-
-
-
-    //  b. Medium Screen  //
-
-
-
-    //  c. Large Screen   //
-
-
-
-
-  ////////////////////
-  //  2. Paddings  //
-    //  a. Small Screen  //
-
-
-
-    //  b. Medium Screen  //
-
-
-
-    //  c. Large Screen   //
-
-
-
-
-
-
-
-  /////////////////////
-  //  3. Transform  //
-    //  a. Small Screen  //
-
-
-
-    //  b. Medium Screen  //
-
-
-
-    //  c. Large Screen   //
-
-
-
-
-
-  ////////////////
-  //  4. SIZE  //
-    //  a. Small Screen  //
-
-
-
-    //  b. Medium Screen  //
-
-
-
-    //  c. Large Screen   //
     $windowSize: 52px;
 
 
@@ -97,39 +22,31 @@
 
 
 
-//////////////
-//  COLOR  //
+
+//----------------  C O L O R
+//--------------------------------------------------------------
 $numberColor: yellow;
 $titleColor: #f6f6f6;
-$opaqueBlack: rgba(0, 0, 0, 0.6);
+$opaqueBlack: rgba(0, 0, 0, 0.7);
+$opaqueNude: rgba(246,246,246, 0.4);
+$opaqueBlue: rgba(41,35,229, 0.5);
 $nudeColor:#a88461;
 $nudeTwoColor: #a28d8f;
+$nudeThreeColor: #988183;
 $seaColor: #809e8d;
 $peachColor: #ce806c;
-$buttonColor: #545454;
-$blueColor: #779abb;
+$blueColor:#8298ad;
 $yellowColor: #c1b18f;
 
-///////////////////
-//  BACKGROUND  //
 
 
 
-///////////////
-//  SHADOW  //
+//--------------  S H A D O W
+//--------------------------------------------------------------------------
 $mainShadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.2), 0 20px 30px 0 rgba(0, 0, 0, 0.19);
 $insetShadow: inset 10px 10px 46px -4px rgba(0,0,0,0.75);
 $textShadow: 6px 6px 0px rgba(0,0,0,0.2);
 $textShadowTwo: 2px 2px 0px rgba(0,0,0,0.2);
-    //  SVG  //
+
+    //  ------------  S V G  ------------  //
     $svgShadow: drop-shadow(10px 10px 15px black);
-
-
-
-///////////////
-//  FILTER  //
-
-
-
-////////////////////////////////
-//  ANIMATION or TRANSITION  //

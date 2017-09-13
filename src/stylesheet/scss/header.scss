@@ -1,67 +1,90 @@
+//=====================================================================
+//  C O N T A I N E R
+//=====================================================================
 .header {
-  background-color: darkgrey;
+  background-color: $blueColor;
   width: 100%;
   height: $containerHeight;
-  position: relative;
 }
 
+//=====================================================================
+//  L O G O
+//=====================================================================
 .header__logo {
   @include relative_position_center;
   width: 80px;
   padding: 10px;
-  @include logo_flag;
-  z-index: 1;
-  @include delay(0.7s);
+  z-index: 3;
 }
 
-
-//  HOUSE  //
+//=====================================================================
+//  H O U S E
+//=====================================================================
 .header__house {
   @include transform(translate(5px, 80px));
+  @include relative_position_center;
+  width: 400px;
+  z-index: 2;
 }
-
 
 .header__house--total {
   @include absolute_position_center;
-  z-index: 1;
 }
 
 .header__house--frame{
   @include transform(translateY(60px));
   width: 170px;
   @include box-shadow($insetShadow);
-  position: absolute;
+  @include absolute_position_center;
+}
+
+.header__house--frame-box{
+  @include transform(translateY(60px));
+  width: 200px;
+  height: 250px;
+  @include box-shadow($insetShadow);
+  @include absolute_position_center;
+}
+
+.header__house--frame-boxTwo{
+  @include transform(translateY(60px));
+  width: 230px;
+  height: 280px;
+  @include box-shadow($insetShadow);
+  @include absolute_position_center;
 }
 
 .header__house--main {
   width: 270px;
   @include filter($svgShadow);
-  position: absolute;
+  @include absolute_position_center;
 }
 
 .header__house--roof {
   width: 270px;
-  position: absolute;
+  @include filter($svgShadow);
+  @include absolute_position_center;
 }
 
 .header__house--window-left {
   @include transform(translate(-26px, 122px));
   width: $windowSize;
-  position: absolute;
+  @include absolute_position_center;
 }
 
 .header__house--window-right {
   @include transform(translate(26px, 122px));
   width: $windowSize;
-  position: absolute;
+  @include absolute_position_center;
 }
 
-//  Text  //
+//====================================================================
+//  T E X T
+//====================================================================
 .header__level {
   @include level_fonts;
   @include transform(translate(8px, 60px));
-  position: absolute;
-
+  color: $numberColor;
 }
 
 .header__title--name {

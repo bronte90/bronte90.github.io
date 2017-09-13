@@ -1,41 +1,25 @@
-/////////////////////////
-//  Animation  Mixin  //
-///////////////////////
-
-///////////////
-//  HEADER  //
-
-//  Logo  //
-@include keyframes(logo_flag) {
-  from {
-    @include relative_position_center;
-  }
-  to {
-    @include transform(rotate(-30deg) translate(9px, 10px));
-  }
-}
-
-@mixin logo_flag {
-  @include animate (logo_flag, 2s, 1, ease-in, forwards);
-}
+//============================================================================
+//  A N I M A T I O N   M I X I N
+//===========================================================================
 
 
-
-///////////////
-// CONTACT  //
+//-------------- C O N T A C T
+//--------------------------------------------------------------
 @include keyframes(dashing) {
   from {
     stroke-dasharray: 3829.83203125;
     stroke-dashoffset: 3829.83203125;
+    stroke: $titleColor;
     fill: transparent;
   }
   to {
     stroke-dashoffset: 0;
-    stroke-dasharray: 0;
-    fill: $yellowColor;
+    stroke-dasharray: 3829.83203125;
+    stroke: $opaqueNude;
+    fill: $opaqueNude;
   }
 }
 
 @mixin dashing {
-  @include animate (dashing, 3s, 1, cubic-bezier(.26,.85,.86,-0.3), forwards);
+  @include animate (dashing, 4s, 1, cubic-bezier(.26,.85,.86,-0.3), forwards);
 }

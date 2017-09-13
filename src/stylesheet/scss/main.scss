@@ -1,3 +1,6 @@
+//=====================================================================
+//  I M P O R T S
+//=====================================================================
 @import 'var';
 @import "mixin";
 @import "animation";
@@ -7,6 +10,9 @@
 @import "gallery";
 @import "contact";
 
+//=====================================================================
+//  E N T I R E   B O D Y
+//=====================================================================
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -26,4 +32,5 @@ body {
     @include absolute_position_center;
     @include transform(translate(-2px, -37px));
     @include filter(brightness(1.5));
+    z-index: 1;
 }

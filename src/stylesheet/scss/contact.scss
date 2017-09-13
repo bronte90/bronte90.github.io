@@ -1,44 +1,122 @@
+//=====================================================================
+//  C O N T A I N E R
+//=====================================================================
 .contact {
+  position: relative;
   background-color: $nudeTwoColor;
   height: $containerHeight;
   width: 100%;
 }
 
-.contact__level {
-  @include level_fonts;
-  @include transform(translate(-40px, 200px));
+.contact__box {
+  @include absolute_position_center;
+  width: 350px;
+  background-color: $nudeThreeColor;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: $titleColor;
+  @include transform(translateY(290px));
+  @include box-shadow($insetShadow);
+  height: 400px;
 }
 
+
+
+//=====================================================================
+//  C O N T A I N E R    L I N E
+//=====================================================================
+.contact__line-one{
+  @include absolute_position_center;
+  width: 220px;
+  height: 1.5px;
+  background-color: $nudeTwoColor;
+  @include transform(translate(64px, 580px));
+  z-index: 2;
+}
+
+.contact__line-two{
+  @include absolute_position_center;
+  width: 1.5px;
+  height: 292px;
+  background-color: $nudeTwoColor;
+  @include transform(translate(-46px, 292px));
+}
+
+.contact__line-three{
+  @include absolute_position_center;
+  width: 167px;
+  height: 1.5px;
+  background-color: $nudeTwoColor;
+  @include transform(translate(-107px, 634px) rotate(-40deg));
+}
+
+
+
+
+//=====================================================================
+//  P A P E R
+//=====================================================================
+.contact__paper{
+  list-style: none;
+  width: 300px;
+  @include absolute_position_center;
+  @include transform(translate(170px, 630px));
+  z-index: 3;
+}
+
+.contact__paper--total {
+  width: 100px;
+  height: 80px;
+  background-color: $titleColor;
+  opacity: 0.3;
+  margin: -109px;
+  @include transform(skew(60deg,-20deg));
+}
+
+//=====================================================================
+//  Y E L L O W   N U M B E R
+//=====================================================================
+.contact__level {
+  @include level_fonts;
+  @include transform(translate(-57px, 280px));
+  color: $yellowColor;
+}
+
+//=====================================================================
+//  E M A I L
+//=====================================================================
 .contact__email {
   color: $titleColor;
   font-family: $titleFont;
   @include absolute_position_center;
-  width: 340px;
+  width: 320px;
   height: 40px;
   text-shadow: $textShadowTwo;
   font-size: 0.8em;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   background-color: $nudeTwoColor;
   border-width: 0.5px;
   border-style: solid;
   border-radius: 20px;
   text-align: center;
   padding: 11px;
-  @include transform(translateY(690px));
+  @include transform(translateY(650px));
   z-index: 4;
+  @include box-shadow($mainShadow);
 }
 
 
+//=====================================================================
+//  'C O N T A C T'   T E X T   S V G
+//=====================================================================
 .contact__text {
   width: 300px;
   @include absolute_position_center;
   z-index: 3;
-  @include transform(translate(-80px, 410px) rotate(10deg));
+  @include transform(translate(-80px, 8px) rotate(15deg));
 }
 
 
-#contact__text--path {
-  stroke: $yellowColor;
-  stroke-width:2.8px;
-  @include dashing;
-}
+// .contact__text--path {
+//   stroke-width:3px; stroke-dasharray: 3829.83203125; stroke-dashoffset: 3829.83203125; stroke: $titleColor; fill: $opaqueBlack; stroke-linecap: round; stroke-linejoin: round;
+// }

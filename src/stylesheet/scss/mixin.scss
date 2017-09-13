@@ -1,12 +1,13 @@
-////////////////////////////////
-//   Other Mixin SCSS File   //
-//////////////////////////////
+//=======================================================================
+//        O T H E R   M I X I N
+//=======================================================================
 
-////////////////
-//  WEBKITS  //
 
-  /////////////////////
-  //  1. Transform  //
+//----------  W E B K I T S
+//---------------------------------------------------
+
+
+  //----------  1. T r a n s f o r m  ----------------//
   @mixin transform($args...) {
     -moz-transform: $args;
     -o-transform: $args;
@@ -25,22 +26,17 @@
 
 
 
-  //////////////////////
-  //  2. Box-Shadow  //
-  //From: https://gist.github.com/johnferrie/3836468
+
+  //-------------  2. B o x - S h a d o w  ----------------//
   @mixin box-shadow($shadow){
     -webkit-box-shadow: $shadow;
     -moz-box-shadow: $shadow;
     box-shadow: $shadow
   }
-  // Example:
-    // @include box-shadow(2px 2px 6px $color)
-    // @include box-shadow(none)
 
 
-  ////////////////////////
-  //  3. Media Queries  //
-  //  media queries  //
+
+  //----------------  3. M e d i a   Q u e r i e s  ----------------//
   @mixin mQ($arg) {
     @media screen and (max-width: $arg) {
       @content;
@@ -49,8 +45,8 @@
 
 
 
-  //////////////////////
-  //  4. Transition  //
+
+  //------------------  4. T r a n s i t i o n  -----------------------//
   // From: http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
   @mixin transition($args...) {
   -webkit-transition: $args;
@@ -60,13 +56,10 @@
   transition: $args;
   }
 
-  // Example:
-  // @include transition(color .3s ease);
 
 
 
-  //////////////////
-  //  5. Filter  //
+  //---------------  5. F i l t e r  --------------------------//
   @mixin filter($args...) {
   -webkit-filter: $args;
   filter: $args;
@@ -74,8 +67,8 @@
 
 
 
-  ///////////////////////////////
-  //  6. Animation Framework  //
+
+  //--------------  6. A n i m a t i o n   F r a m e w o r k  -------------------//
   //Reference: https://www.mrpapercut.com/blog/2016-09-26-keyframe-animations-in-sass
   @mixin keyframes($animationName) {
     @-webkit-keyframes #{$animationName} {
@@ -131,8 +124,10 @@
 
 
 
-/////////////////
-//  POSITION  //
+
+
+//-------------  P O S I T I O N
+//---------------------------------------------------------------------------
 @mixin absolute_position_center {
   position: absolute;
   margin-left: auto;
@@ -158,8 +153,9 @@
   margin-left: auto;
 }
 
-//////////////
-//  FONTS  //
+
+//-----------------  F O N T S
+//---------------------------------------------------------------
 @mixin title_fonts {
   color: $titleColor;
   font-family: $titleFont;
@@ -173,15 +169,7 @@
 }
 
 @mixin level_fonts {
-  color: $numberColor;
   @include absolute_position_center;
+  text-shadow: $textShadow;
   width: 200px;
-}
-
-///////////////////
-//  BACKGROUND  //
-@mixin galaxy {
-  background-image: url("../../dist/images/galaxy-large.jpg");
-  background-size: cover;
-  margin: 0;
 }
