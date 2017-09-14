@@ -197,6 +197,8 @@ var pinHouse = new ScrollMagic.Scene({
 
 //------------  H o u s e   O n   L o a d  --------------//
 var headerTl = new TimelineMax();
+var titleText = "boat";
+var titleTextStrike = titleText.strike();
 
 headerTl
   .from($headerLevel, 0.7, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
@@ -205,7 +207,8 @@ headerTl
   .from($headerHouseFrame, 0.5, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseWindowLeft, 0.3, {rotationY: 90, transformOrigin:"0% 99%", ease:Bounce.easeOut})
   .from($headerHouseWindowRight, 0.3, {rotationY: 90, transformOrigin:"99% 0%", ease:Bounce.easeOut})
-  .from($headerTitle, 0.5, {x:-15, opacity: 0, ease:Power2.easeOut, zIndex: 0}, '-=0.15');
+  .to($headerTitle, 1.7, {text: "BRONTË", scale:1.6}, '-=3')
+  .to($headerTitle, 2, {text: "FRONTEND DEVELOPER", scale:1}, '-=0.25');
 
 
 //------------  H o u s e   T i t l e  --------------//
@@ -232,8 +235,8 @@ var headerTitle = new ScrollMagic.Scene({
 var  homeAboutTl = new TimelineMax();
 
 homeAboutTl
-  .to($headerHouseRoof, 2, {rotationX:-90, transformOrigin:"0% 99%", ease:Linear.easeNone})
-  .to($headerHouseMain, 2, {rotationX:-90, transformOrigin:"0% 99%", ease:Linear.easeNone});
+  .to($headerHouseRoof, 0.7, {rotationX:-90, transformOrigin:"0% 99%", ease:Linear.easeNone})
+  .to($headerHouseMain, 0.7, {rotationX:-90, transformOrigin:"0% 99%", ease:Linear.easeNone});
 
 
 var headerAbout = new ScrollMagic.Scene({
@@ -273,7 +276,7 @@ var sceneGalaxyZoom = new ScrollMagic.Scene({
 var windowTl = new TimelineMax();
 
 windowTl
-.from($aboutLevel, 0.3, {y: -15, opacity:0, ease:Linear.easeNone})
+.from($aboutLevel, 0.2, {y: -15, opacity:0, ease:Linear.easeNone})
 .from($aboutPic, 0.1, {scale: 0, opacity:0, ease:Linear.easeNone})
 .to($headerHouseWindowLeft, 0.3, {rotationY: 180, transformOrigin:"0% 99%", ease:Linear.easeNone})
 .to($headerHouseWindowRight, 0.3, {rotationY: 180, transformOrigin:"99% 0%", ease:Linear.easeNone})

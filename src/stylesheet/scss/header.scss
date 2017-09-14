@@ -91,7 +91,10 @@
   @include title_fonts;
   color: $titleColor;
   opacity: 0.8;
-  @include transform(translate(25px, 400px));
-  position: absolute;
+  @include transform(translateY(380px));
   z-index: 0;
+  @include absolute_position_center;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
 }
