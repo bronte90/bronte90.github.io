@@ -63,14 +63,12 @@
   //========  J Q U E R Y  ==========//
   var $aboutLevel = $('.about__level');
   var $aboutPic = $('.about__window-box');
-  var $aboutTitleOne = $('.about__title');
-  var $aboutTitleTwo = $('.about__title-two');
-  var $aboutTitleThree = $('.about__title-three');
+  var $aboutTitle = $('.about__title');
 
   //========  S T R I N G  ==========//
   var aboutContainer = '.about';
   var aboutLevel = '.about__level';
-  var aboutTitle ='.about__title';
+  var aboutTitle = '.about__title';
   var aboutPic = '.about__window-box';
 
 
@@ -205,8 +203,8 @@ headerTl
   .from($headerHouseMain, 0.6, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseRoof, 0.5, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseFrame, 0.5, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
-  .from($headerHouseWindowLeft, 0.3, {rotationY: 90, transformOrigin:"0% 99%", ease:Bounce.easeOut})
-  .from($headerHouseWindowRight, 0.3, {rotationY: 90, transformOrigin:"99% 0%", ease:Bounce.easeOut})
+  .from($headerHouseWindowLeft, 0.3, {rotationY: 90, transformOrigin:"0% 99%", opacity: 0, ease:Bounce.easeOut})
+  .from($headerHouseWindowRight, 0.3, {rotationY: 90, transformOrigin:"99% 0%", opacity: 0, ease:Bounce.easeOut})
   .to($headerTitle, 1.7, {text: "BRONTË", scale:1.6}, '-=3')
   .to($headerTitle, 2, {text: "FRONTEND DEVELOPER", scale:1}, '-=0.25');
 
@@ -278,32 +276,31 @@ var windowTl = new TimelineMax();
 windowTl
 .from($aboutLevel, 0.2, {y: -15, opacity:0, ease:Linear.easeNone})
 .from($aboutPic, 0.1, {scale: 0, opacity:0, ease:Linear.easeNone})
-.to($headerHouseWindowLeft, 0.3, {rotationY: 180, transformOrigin:"0% 99%", ease:Linear.easeNone})
-.to($headerHouseWindowRight, 0.3, {rotationY: 180, transformOrigin:"99% 0%", ease:Linear.easeNone})
-.to($aboutTitleTwo, 0.3, {scale: 1.5, top: "-=20", opacity: 0.8, ease:Linear.easeNone})
-.to($aboutTitleThree, 0.3, {scale: 2, top: "-=20", opacity: 0.4, ease:Linear.easeNone})
+.to($headerHouseWindowLeft, 0.23, {rotationY: 180, transformOrigin:"0% 99%", ease:Linear.easeNone})
+.to($headerHouseWindowRight, 0.23, {rotationY: 180, transformOrigin:"99% 0%", ease:Linear.easeNone})
+.to($aboutTitle, 1, {scale:2.5, ease:Linear.easeNone})
 ;
 
 
 var sceneGalaxyZoom = new ScrollMagic.Scene({
   triggerElement: aboutTitle,
-  offset: -170
+  offset: -230,
+  duration: 300
 })
 .setTween(windowTl)
 .addIndicators({name:'4 window-galaxy'}) //indicate trigger meeting point
 .addTo(controller);
 
-
-//----------  P i n   P r o f i l e   P i c  -----------//
+// ----------------  P I N S  I N  G A L A X Y
+//----------------------------------------------------------------------
+    //----------  P i n   P r o f i l e   P i c  -----------//
 var pinProfile = new ScrollMagic.Scene({
-  triggerElement: aboutTitle,
-  offset: -147
+  triggerElement: aboutContainer,
+  offset: 380
   })
   .setPin(aboutPic)
   .addIndicators({name: 'pin profile'}) // add indicators (requires plugin)
   .addTo(controller);
-
-
 
 
 

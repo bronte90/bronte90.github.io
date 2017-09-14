@@ -5,7 +5,7 @@ background-position: top center;
 background-attachment: fixed;
 background-repeat: repeat;
 margin: 0;
-height: 1500px;
+height: 2000px;
 width: 100%;
 background-color: $opaqueBlack;
 background-blend-mode: hard-light;
@@ -21,25 +21,34 @@ background-blend-mode: hard-light;
 .about__title {
   @include title_fonts;
   color: $nudeColor;
-  @include transform(translate(40px, 500px));
+  opacity: 0.4;
+  letter-spacing: 6px;
+  @include transform(translateY(500px) scale(1.5));
+  text-align: center;
+  width: 400px;
 }
 
-.about__title-two {
-  @include title_fonts;
-  color: $nudeColor;
-  @include transform(translate(40px, 500px));
-}
-
-.about__title-three {
-  @include title_fonts;
-  color: $nudeColor;
-  @include transform(translate(40px, 500px));
-}
-
-.about__window-box {
+.about__window-box--photo {
   width: 95px;
   z-index: 0;
   @include absolute_position_center;
   @include transform(translate(5px, 370px));
   @include filter(brightness(0.7) contrast(110%));
+}
+
+.about__window-box--blinders {
+  width: 111px;
+  height: 160px;
+  @include absolute_position_center;
+  @include transform(translateY(300px));
+  list-style: none;
+}
+
+.about__window-box--blinders-each {
+  background-color: $opaqueBlack;
+  width: 111px;
+  height: 26.67px;
+  @include transform(translateX(-35px) rotateX(65deg));
+  @include transformOrigin(top);
+  @include box-shadow($mainShadow);
 }
