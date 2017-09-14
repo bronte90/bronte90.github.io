@@ -424,7 +424,7 @@
 .contact {
   position: relative;
   background-color: #a28d8f;
-  height: 820px;
+  height: 830px;
   width: 100%; }
 
 .contact__box {
@@ -437,7 +437,7 @@
   background-color: #988183;
   border-width: 0.5px;
   border-style: solid;
-  border-color: #f6f6f6;
+  border-color: #D3D3D3;
   -moz-transform: translateY(290px);
   -o-transform: translateY(290px);
   -ms-transform: translateY(290px);
@@ -518,7 +518,7 @@
 .contact__paper--total {
   width: 100px;
   height: 80px;
-  background-color: #f6f6f6;
+  background-color: #D3D3D3;
   opacity: 0.3;
   margin: -109px;
   -moz-transform: skew(60deg, -20deg);
@@ -543,7 +543,7 @@
   color: #c1b18f; }
 
 .contact__email {
-  color: #f6f6f6;
+  color: #D3D3D3;
   font-family: Avantgarde, sans-serif;
   position: absolute;
   margin-left: auto;
@@ -593,12 +593,12 @@
   left: 0;
   right: 0;
   z-index: 3;
-  width: 130px;
-  -moz-transform: translateY(400px);
-  -o-transform: translateY(400px);
-  -ms-transform: translateY(400px);
-  -webkit-transform: translateY(400px);
-  transform: translateY(400px);
+  width: 90px;
+  -moz-transform: translateY(450px);
+  -o-transform: translateY(450px);
+  -ms-transform: translateY(450px);
+  -webkit-transform: translateY(450px);
+  transform: translateY(450px);
   -webkit-filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
   filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2)); }
 
@@ -614,7 +614,7 @@ body {
 
 .background-ladder {
   background-image: url(../../dist/images/ladder.svg);
-  height: 3327px;
+  height: 736px;
   width: 10px;
   position: absolute;
   margin-left: auto;

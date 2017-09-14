@@ -4,7 +4,7 @@
 .contact {
   position: relative;
   background-color: $nudeTwoColor;
-  height: 820px;
+  height: 830px;
   width: 100%;
 }
 
@@ -14,7 +14,7 @@
   background-color: $nudeThreeColor;
   border-width: 0.5px;
   border-style: solid;
-  border-color: $titleColor;
+  border-color: $greyColor;
   @include transform(translateY(290px));
   @include box-shadow($insetShadow);
   height: 400px;
@@ -70,7 +70,7 @@
 .contact__paper--total {
   width: 100px;
   height: 80px;
-  background-color: $titleColor;
+  background-color: $greyColor;
   opacity: 0.3;
   margin: -109px;
   @include transform(skew(60deg,-20deg));
@@ -89,7 +89,7 @@
 //  E M A I L
 //=====================================================================
 .contact__email {
-  color: $titleColor;
+  color: $greyColor;
   font-family: $titleFont;
   @include absolute_position_center;
   width: 320px;
@@ -127,7 +127,7 @@
 .contact__moon {
   @include absolute_position_center;
   z-index: 3;
-  width: 130px;
-  @include transform(translateY(400px));
+  width: 90px;
+  @include transform(translateY(450px));
   @include filter($svgShadowTwo);
 }

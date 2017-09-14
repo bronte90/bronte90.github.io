@@ -134,6 +134,7 @@ var headerHouse = '.header__house';
 var headerTitle = '.header__title--name';
 var headerBox = '.header__house--frame-box';
 var headerBoxTwo = '.header__house--frame-boxTwo';
+var $headerLogo = $('.header__logo');
 
 
 //----------  H o u s e   O n   S c r o l l  ------------//
@@ -151,30 +152,27 @@ var pinHouse = new ScrollMagic.Scene({
 var headerTl = new TimelineMax();
 
 headerTl
-  .from($headerLevel, 0.8, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
-  .from($headerHouseMain, 1, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
-  .from($headerHouseRoof, 1, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
-  .from($headerHouseFrame, 0.8, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
-  .from($headerHouseWindowLeft, 0.8, {rotationY: 90, transformOrigin:"0% 90%", ease:Bounce.easeOut})
-  .from($headerHouseWindowRight, 0.8, {rotationY: 90, transformOrigin:"90% 0%", ease:Bounce.easeOut})
-  .from($headerTitle, 0.8, {x:-15, opacity: 0, ease:Power2.easeOut}, '-=0.15');
+  .from($headerLevel, 0.7, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
+  .from($headerHouseMain, 0.7, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
+  .from($headerHouseRoof, 0.7, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
+  .from($headerHouseFrame, 0.7, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
+  .from($headerHouseWindowLeft, 0.7, {rotationY: 90, transformOrigin:"0% 90%", ease:Bounce.easeOut})
+  .from($headerHouseWindowRight, 0.7, {rotationY: 90, transformOrigin:"90% 0%", ease:Bounce.easeOut})
+  .from($headerTitle, 0.7, {x:-15, opacity: 0, ease:Power2.easeOut}, '-=0.15');
 
 
 //------------  H o u s e   T i t l e  --------------//
 var homeTl = new TimelineMax();
 
 homeTl
-  .to($headerTitle, 3, {
-    scale: 3.5,
-    x: 80,
-    y: 570,
-    opacity: 0,
-    zIndex: 4,
-  });
+  .to($headerLevel, 0.4, {y: 30, opacity: 0, ease:Power2.easeOut})
+  .to($headerLogo, 2.7, {y: 440, ease:Linear.easeNone})
+  .to($headerTitle, 1, {opacity: 0, ease:Power2.easeOut});
+
 
 var headerTitle = new ScrollMagic.Scene({
   triggerElement: headerHouse,
-  triggerHook: -30,
+  offset: 280,
   duration: 500,
   reverse: true
 })
@@ -183,7 +181,7 @@ var headerTitle = new ScrollMagic.Scene({
 .addTo(controller);
 
 
-//------------  H o u s e   R e a c h   A b o u t  --------------//
+//------------  H o u s e   R e a c h   'A b o u t   S e c t i o n'  --------------//
 var  homeAboutTl = new TimelineMax();
 
 homeAboutTl
@@ -193,7 +191,7 @@ homeAboutTl
 
 var headerAbout = new ScrollMagic.Scene({
   triggerElement: headerTitle,
-  duration: 830
+  duration: 800
 })
 .setTween(homeAboutTl)
 .addIndicators({name: '2 house'})
@@ -207,7 +205,8 @@ var aboutContainer = '.about';
 var $imgAboutContainer = $('.about');
 var aboutLevel = '.about__level';
 var $aboutLevel = '.about__level';
-var $aboutTitle ='.about__title';
+var aboutTitle ='.about__title';
+
 
 
 //----------  G a l a x y   B a c k g r o u n d  -----------//
@@ -229,6 +228,17 @@ var sceneGalaxyZoom = new ScrollMagic.Scene({
 .addIndicators({name:'2 - galaxy'}) //indicate trigger meeting point
 .addTo(controller);
 
+
+//----------  H o u s e   i n   G a l a x y  -----------//
+
+// var pinHouse = new ScrollMagic.Scene({
+//   triggerElement: header,
+//   triggerHook: 0,
+//   duration: 800
+//   })
+//   .setPin(headerHouse)
+//   .addIndicators({name: '1 house (duration: 800)'}) // add indicators (requires plugin)
+//   .addTo(controller);
 
 
 //==========================================================================
@@ -261,7 +271,7 @@ pathPrepare($contactTitlePath);
 // build tween
 var contactTween = new TimelineMax()
   .add(TweenMax.to($contactTitlePath, 1, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
-  .add(TweenMax.to("path", 1.1, {stroke: "rgba(0, 0, 0, 0.7)", ease:Linear.easeNone}), 0);			// change color during the whole thing
+  .add(TweenMax.to("path", 1.1, {stroke: "#bdbdbd", ease:Linear.easeNone}), 0);			// change color during the whole thing
 
 // build scene
 var scene = new ScrollMagic.Scene({
@@ -292,7 +302,7 @@ $contactPapereach.each(function(){
   //build scene
   var paperScene = new ScrollMagic.Scene({
     triggerElement: this,
-    offset: -100
+    offset: -90
   })
   .setTween(tween)
   .addIndicators({name:'paper'}) // add indicators (requires plugin)
