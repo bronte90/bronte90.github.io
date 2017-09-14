@@ -27,10 +27,10 @@ body {
 
 .background-ladder {
     background-image: url(../../dist/images/ladder.svg);
-    min-height: 3135px;
+    height: 3327px;
     width: 10px;
     @include absolute_position_center;
     @include transform(translate(-2px, -37px));
-    @include filter(brightness(1.5));
+    @include filter(brightness(1.5) $svgShadowTwo);
     z-index: 1;
 }

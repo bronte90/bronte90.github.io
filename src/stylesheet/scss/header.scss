@@ -12,6 +12,7 @@
 //=====================================================================
 .header__logo {
   @include relative_position_center;
+  @include filter ($svgShadowTwo);
   width: 80px;
   padding: 10px;
   z-index: 3;
@@ -36,6 +37,7 @@
   width: 170px;
   @include box-shadow($insetShadow);
   @include absolute_position_center;
+  @include filter($svgShadowTwo);
 }
 
 .header__house--frame-box{
@@ -48,8 +50,8 @@
 
 .header__house--frame-boxTwo{
   @include transform(translateY(60px));
-  width: 230px;
-  height: 280px;
+  width: 232px;
+  height: 266px;
   @include box-shadow($insetShadow);
   @include absolute_position_center;
 }
@@ -62,7 +64,7 @@
 
 .header__house--roof {
   width: 270px;
-  @include filter($svgShadow);
+  @include filter($svgShadowTwo);
   @include absolute_position_center;
 }
 

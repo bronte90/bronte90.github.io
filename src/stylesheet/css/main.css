@@ -1,51 +1,3 @@
-@-webkit-keyframes dashing {
-  from {
-    stroke-dasharray: 3829.83203125;
-    stroke-dashoffset: 3829.83203125;
-    stroke: #f6f6f6;
-    fill: transparent; }
-  to {
-    stroke-dashoffset: 0;
-    stroke-dasharray: 3829.83203125;
-    stroke: rgba(246, 246, 246, 0.4);
-    fill: rgba(246, 246, 246, 0.4); } }
-
-@-moz-keyframes dashing {
-  from {
-    stroke-dasharray: 3829.83203125;
-    stroke-dashoffset: 3829.83203125;
-    stroke: #f6f6f6;
-    fill: transparent; }
-  to {
-    stroke-dashoffset: 0;
-    stroke-dasharray: 3829.83203125;
-    stroke: rgba(246, 246, 246, 0.4);
-    fill: rgba(246, 246, 246, 0.4); } }
-
-@-o-keyframes dashing {
-  from {
-    stroke-dasharray: 3829.83203125;
-    stroke-dashoffset: 3829.83203125;
-    stroke: #f6f6f6;
-    fill: transparent; }
-  to {
-    stroke-dashoffset: 0;
-    stroke-dasharray: 3829.83203125;
-    stroke: rgba(246, 246, 246, 0.4);
-    fill: rgba(246, 246, 246, 0.4); } }
-
-@keyframes dashing {
-  from {
-    stroke-dasharray: 3829.83203125;
-    stroke-dashoffset: 3829.83203125;
-    stroke: #f6f6f6;
-    fill: transparent; }
-  to {
-    stroke-dashoffset: 0;
-    stroke-dasharray: 3829.83203125;
-    stroke: rgba(246, 246, 246, 0.4);
-    fill: rgba(246, 246, 246, 0.4); } }
-
 .header {
   background-color: #8298ad;
   width: 100%;
@@ -58,6 +10,8 @@
   margin-right: auto;
   left: 0;
   right: 0;
+  -webkit-filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
   width: 80px;
   padding: 10px;
   z-index: 3; }
@@ -98,7 +52,9 @@
   margin-left: auto;
   margin-right: auto;
   left: 0;
-  right: 0; }
+  right: 0;
+  -webkit-filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2)); }
 
 .header__house--frame-box {
   -moz-transform: translateY(60px);
@@ -123,8 +79,8 @@
   -ms-transform: translateY(60px);
   -webkit-transform: translateY(60px);
   transform: translateY(60px);
-  width: 230px;
-  height: 280px;
+  width: 232px;
+  height: 266px;
   -webkit-box-shadow: inset 10px 10px 46px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset 10px 10px 46px -4px rgba(0, 0, 0, 0.75);
   box-shadow: inset 10px 10px 46px -4px rgba(0, 0, 0, 0.75);
@@ -146,8 +102,8 @@
 
 .header__house--roof {
   width: 270px;
-  -webkit-filter: drop-shadow(10px 10px 15px black);
-  filter: drop-shadow(10px 10px 15px black);
+  -webkit-filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -410,8 +366,8 @@
 
 .about__window-box {
   width: 120px;
-  height: 180px;
-  background-color: black;
+  height: 170px;
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -468,7 +424,7 @@
 .contact {
   position: relative;
   background-color: #a28d8f;
-  height: 800px;
+  height: 820px;
   width: 100%; }
 
 .contact__box {
@@ -490,7 +446,9 @@
   -webkit-box-shadow: inset 10px 10px 46px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset 10px 10px 46px -4px rgba(0, 0, 0, 0.75);
   box-shadow: inset 10px 10px 46px -4px rgba(0, 0, 0, 0.75);
-  height: 400px; }
+  height: 400px;
+  -webkit-filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2)); }
 
 .contact__line-one {
   position: absolute;
@@ -506,7 +464,9 @@
   -ms-transform: translate(64px, 580px);
   -webkit-transform: translate(64px, 580px);
   transform: translate(64px, 580px);
-  z-index: 2; }
+  z-index: 2;
+  -webkit-filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2)); }
 
 .contact__line-two {
   position: absolute;
@@ -551,7 +511,9 @@
   -ms-transform: translate(170px, 630px);
   -webkit-transform: translate(170px, 630px);
   transform: translate(170px, 630px);
-  z-index: 3; }
+  z-index: 3;
+  -webkit-filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2)); }
 
 .contact__paper--total {
   width: 100px;
@@ -596,7 +558,7 @@
   background-color: #a28d8f;
   border-width: 0.5px;
   border-style: solid;
-  border-radius: 20px;
+  border-radius: 5px;
   text-align: center;
   padding: 11px;
   -moz-transform: translateY(650px);
@@ -605,9 +567,8 @@
   -webkit-transform: translateY(650px);
   transform: translateY(650px);
   z-index: 4;
-  -webkit-box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.2), 0 20px 30px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.2), 0 20px 30px 0 rgba(0, 0, 0, 0.19);
-  box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.2), 0 20px 30px 0 rgba(0, 0, 0, 0.19); }
+  -webkit-filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2)); }
 
 .contact__text {
   width: 300px;
@@ -621,7 +582,25 @@
   -o-transform: translate(-80px, 8px) rotate(15deg);
   -ms-transform: translate(-80px, 8px) rotate(15deg);
   -webkit-transform: translate(-80px, 8px) rotate(15deg);
-  transform: translate(-80px, 8px) rotate(15deg); }
+  transform: translate(-80px, 8px) rotate(15deg);
+  -webkit-filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2)); }
+
+.contact__moon {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  width: 130px;
+  -moz-transform: translateY(400px);
+  -o-transform: translateY(400px);
+  -ms-transform: translateY(400px);
+  -webkit-transform: translateY(400px);
+  transform: translateY(400px);
+  -webkit-filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2)); }
 
 * {
   -webkit-box-sizing: border-box;
@@ -635,7 +614,7 @@ body {
 
 .background-ladder {
   background-image: url(../../dist/images/ladder.svg);
-  min-height: 3135px;
+  height: 3327px;
   width: 10px;
   position: absolute;
   margin-left: auto;
@@ -647,6 +626,6 @@ body {
   -ms-transform: translate(-2px, -37px);
   -webkit-transform: translate(-2px, -37px);
   transform: translate(-2px, -37px);
-  -webkit-filter: brightness(1.5);
-  filter: brightness(1.5);
+  -webkit-filter: brightness(1.5) drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
+  filter: brightness(1.5) drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
   z-index: 1; }

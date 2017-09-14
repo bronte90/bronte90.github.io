@@ -4,7 +4,7 @@
 .contact {
   position: relative;
   background-color: $nudeTwoColor;
-  height: $containerHeight;
+  height: 820px;
   width: 100%;
 }
 
@@ -18,6 +18,7 @@
   @include transform(translateY(290px));
   @include box-shadow($insetShadow);
   height: 400px;
+  @include filter($svgShadowTwo);
 }
 
 
@@ -32,6 +33,7 @@
   background-color: $nudeTwoColor;
   @include transform(translate(64px, 580px));
   z-index: 2;
+  @include filter($svgShadowTwo);
 }
 
 .contact__line-two{
@@ -62,6 +64,7 @@
   @include absolute_position_center;
   @include transform(translate(170px, 630px));
   z-index: 3;
+  @include filter($svgShadowTwo);
 }
 
 .contact__paper--total {
@@ -97,12 +100,12 @@
   background-color: $nudeTwoColor;
   border-width: 0.5px;
   border-style: solid;
-  border-radius: 20px;
+  border-radius: 5px;
   text-align: center;
   padding: 11px;
   @include transform(translateY(650px));
   z-index: 4;
-  @include box-shadow($mainShadow);
+  @include filter($svgShadowTwo);
 }
 
 
@@ -114,9 +117,17 @@
   @include absolute_position_center;
   z-index: 3;
   @include transform(translate(-80px, 8px) rotate(15deg));
+  @include filter($svgShadowTwo);
 }
 
 
-// .contact__text--path {
-//   stroke-width:3px; stroke-dasharray: 3829.83203125; stroke-dashoffset: 3829.83203125; stroke: $titleColor; fill: $opaqueBlack; stroke-linecap: round; stroke-linejoin: round;
-// }
+//=====================================================================
+//  M O O N   S V G
+//=====================================================================
+.contact__moon {
+  @include absolute_position_center;
+  z-index: 3;
+  width: 130px;
+  @include transform(translateY(400px));
+  @include filter($svgShadowTwo);
+}

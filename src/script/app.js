@@ -34,9 +34,6 @@
   // var for scroll
   var $scrollTime = 800;
 
-  // var for contact
-  var $contactPapereach = $('.contact__paper--total');
-
 
 
 //===============================================================
@@ -135,6 +132,9 @@ var $headerHouseRoof = $('.header__house--roof');
 var header = '.header';
 var headerHouse = '.header__house';
 var headerTitle = '.header__title--name';
+var headerBox = '.header__house--frame-box';
+var headerBoxTwo = '.header__house--frame-boxTwo';
+
 
 //----------  H o u s e   O n   S c r o l l  ------------//
 var pinHouse = new ScrollMagic.Scene({
@@ -175,7 +175,8 @@ homeTl
 var headerTitle = new ScrollMagic.Scene({
   triggerElement: headerHouse,
   triggerHook: -30,
-  duration: 500
+  duration: 500,
+  reverse: true
 })
 .setTween(homeTl)
 .addIndicators({name: '3 Title'})
@@ -186,13 +187,13 @@ var headerTitle = new ScrollMagic.Scene({
 var  homeAboutTl = new TimelineMax();
 
 homeAboutTl
-  .to($headerHouseRoof, 2, {rotationX:-90, transformOrigin:"0% 90%", ease:Quint.easeOut})
-  .to($headerHouseMain, 2, {rotationX:-90, transformOrigin:"0% 90%", ease:Quint.easeOut});
+  .to($headerHouseRoof, 2, {rotationX:-90, transformOrigin:"0% 90%", ease:Linear.easeNone})
+  .to($headerHouseMain, 2, {rotationX:-90, transformOrigin:"0% 90%", ease:Linear.easeNone});
 
 
 var headerAbout = new ScrollMagic.Scene({
   triggerElement: headerTitle,
-  duration: 900
+  duration: 830
 })
 .setTween(homeAboutTl)
 .addIndicators({name: '2 house'})
@@ -259,18 +260,18 @@ pathPrepare($contactTitlePath);
 
 // build tween
 var contactTween = new TimelineMax()
-  .add(TweenMax.to($contactTitlePath, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
-  .add(TweenMax.to("path", 1, {stroke: "rgba(0, 0, 0, 0.7)", ease:Linear.easeNone}), 0);			// change color during the whole thing
+  .add(TweenMax.to($contactTitlePath, 1, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
+  .add(TweenMax.to("path", 1.1, {stroke: "rgba(0, 0, 0, 0.7)", ease:Linear.easeNone}), 0);			// change color during the whole thing
 
 // build scene
 var scene = new ScrollMagic.Scene({
   triggerElement: contactContainer,
   duration: 200,
-  tweenChanges: true
+  tweenChanges: true,
   })
-				.setTween(contactTween)
-				.addIndicators({name:'contact'}) // add indicators (requires plugin)
-				.addTo(controller);
+.setTween(contactTween)
+.addIndicators({name:'contact'}) // add indicators (requires plugin)
+.addTo(controller);
 
 
 // * * * ---- N o t e : Gets length of contact svg (Uncomment to get value on console)
@@ -279,3 +280,42 @@ var scene = new ScrollMagic.Scene({
 
 
 //----------  C O N T A C T   P A P E R -----------//
+var contactPapereach = '.contact__paper--total';
+var $contactPapereach = $('.contact__paper--total');
+
+
+//loop through elements
+$contactPapereach.each(function(){
+  //build a tween
+  var tween = TweenMax.to($(this), 0.3, {margin: '+=20', x:'-=20', ease:Linear.easeNone});
+
+  //build scene
+  var paperScene = new ScrollMagic.Scene({
+    triggerElement: this,
+    offset: -100
+  })
+  .setTween(tween)
+  .addIndicators({name:'paper'}) // add indicators (requires plugin)
+  .addTo(controller)
+  ;
+});
+
+
+//----------  C O N T A C T   M O O N -----------//
+var contactMoon = '.contact__moon';
+var $contactMoon = $('.contact__moon');
+var contactBox = '.contact__box';
+var moonTl = new TimelineMax();
+
+moonTl
+.delay(0.1)
+.from($contactMoon, 1, {y: -30, opacity: 0, ease:Bounce.easeOut})
+;
+
+var sceneGalaxyZoom = new ScrollMagic.Scene({
+  triggerElement: contactBox,
+  offset: 160
+})
+.setTween(moonTl)
+.addIndicators({name:'moon'}) //indicate trigger meeting point
+.addTo(controller);

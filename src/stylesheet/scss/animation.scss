@@ -1,25 +1,3 @@
 //============================================================================
 //  A N I M A T I O N   M I X I N
 //===========================================================================
-
-
-//-------------- C O N T A C T
-//--------------------------------------------------------------
-@include keyframes(dashing) {
-  from {
-    stroke-dasharray: 3829.83203125;
-    stroke-dashoffset: 3829.83203125;
-    stroke: $titleColor;
-    fill: transparent;
-  }
-  to {
-    stroke-dashoffset: 0;
-    stroke-dasharray: 3829.83203125;
-    stroke: $opaqueNude;
-    fill: $opaqueNude;
-  }
-}
-
-@mixin dashing {
-  @include animate (dashing, 4s, 1, cubic-bezier(.26,.85,.86,-0.3), forwards);
-}
