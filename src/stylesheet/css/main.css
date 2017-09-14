@@ -22,14 +22,13 @@
   -ms-transform: translate(5px, 80px);
   -webkit-transform: translate(5px, 80px);
   transform: translate(5px, 80px);
-  display: block;
-  position: relative;
+  position: absolute;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
   width: 400px;
-  z-index: 2; }
+  z-index: 3; }
 
 .header__house--total {
   position: absolute;
@@ -170,7 +169,8 @@
   -ms-transform: translate(25px, 400px);
   -webkit-transform: translate(25px, 400px);
   transform: translate(25px, 400px);
-  position: absolute; }
+  position: absolute;
+  z-index: 0; }
 
 .nav {
   position: fixed;
@@ -627,5 +627,4 @@ body {
   -webkit-transform: translate(-2px, -37px);
   transform: translate(-2px, -37px);
   -webkit-filter: brightness(1.5) drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
-  filter: brightness(1.5) drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2));
-  z-index: 1; }
+  filter: brightness(1.5) drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.2)); }

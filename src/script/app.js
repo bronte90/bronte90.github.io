@@ -135,6 +135,7 @@ var headerTitle = '.header__title--name';
 var headerBox = '.header__house--frame-box';
 var headerBoxTwo = '.header__house--frame-boxTwo';
 var $headerLogo = $('.header__logo');
+var $headerHouse = $('.header__house');
 
 
 //----------  H o u s e   O n   S c r o l l  ------------//
@@ -158,7 +159,7 @@ headerTl
   .from($headerHouseFrame, 0.7, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseWindowLeft, 0.7, {rotationY: 90, transformOrigin:"0% 90%", ease:Bounce.easeOut})
   .from($headerHouseWindowRight, 0.7, {rotationY: 90, transformOrigin:"90% 0%", ease:Bounce.easeOut})
-  .from($headerTitle, 0.7, {x:-15, opacity: 0, ease:Power2.easeOut}, '-=0.15');
+  .from($headerTitle, 0.7, {x:-15, opacity: 0, ease:Power2.easeOut, zIndex: 0}, '-=0.15');
 
 
 //------------  H o u s e   T i t l e  --------------//
@@ -167,7 +168,7 @@ var homeTl = new TimelineMax();
 homeTl
   .to($headerLevel, 0.4, {y: 30, opacity: 0, ease:Power2.easeOut})
   .to($headerLogo, 2.7, {y: 440, ease:Linear.easeNone})
-  .to($headerTitle, 1, {opacity: 0, ease:Power2.easeOut});
+  .to($headerTitle, 1, {opacity: 0, zIndex:0, ease:Power2.easeOut});
 
 
 var headerTitle = new ScrollMagic.Scene({
@@ -228,17 +229,16 @@ var sceneGalaxyZoom = new ScrollMagic.Scene({
 .addIndicators({name:'2 - galaxy'}) //indicate trigger meeting point
 .addTo(controller);
 
-
 //----------  H o u s e   i n   G a l a x y  -----------//
 
-// var pinHouse = new ScrollMagic.Scene({
-//   triggerElement: header,
-//   triggerHook: 0,
-//   duration: 800
-//   })
-//   .setPin(headerHouse)
-//   .addIndicators({name: '1 house (duration: 800)'}) // add indicators (requires plugin)
-//   .addTo(controller);
+var pinHouse = new ScrollMagic.Scene({
+  triggerElement: aboutTitle,
+  offset: -120,
+  duration: 500
+  })
+  .setPin(headerHouse)
+  .addIndicators({name: 'house galaxy'}) // add indicators (requires plugin)
+  .addTo(controller);
 
 
 //==========================================================================

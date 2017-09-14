@@ -23,9 +23,9 @@
 //=====================================================================
 .header__house {
   @include transform(translate(5px, 80px));
-  @include relative_position_center;
+  @include absolute_position_center;
   width: 400px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .header__house--total {
@@ -93,4 +93,5 @@
   @include title_fonts;
   @include transform(translate(25px, 400px));
   position: absolute;
+  z-index: 0;
 }

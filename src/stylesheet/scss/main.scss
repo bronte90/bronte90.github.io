@@ -32,5 +32,4 @@ body {
     @include absolute_position_center;
     @include transform(translate(-2px, -37px));
     @include filter(brightness(1.5) $svgShadowTwo);
-    z-index: 1;
 }
