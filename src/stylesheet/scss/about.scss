@@ -20,6 +20,19 @@ background-blend-mode: hard-light;
 
 .about__title {
   @include title_fonts;
+  color: $nudeColor;
+  @include transform(translate(40px, 500px));
+}
+
+.about__title-two {
+  @include title_fonts;
+  color: $nudeColor;
+  @include transform(translate(40px, 500px));
+}
+
+.about__title-three {
+  @include title_fonts;
+  color: $nudeColor;
   @include transform(translate(40px, 500px));
 }
 

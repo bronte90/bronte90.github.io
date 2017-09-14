@@ -5,6 +5,19 @@
 //       V A R I A B L E S
 //=========================================================================
 
+//***----------  M A I N   C O N T A I N E R S  ------------***//
+
+  //========  J Q U E R Y  ==========//
+  // var for container div when 'menu listed links' are clicked
+  var $headerDiv = $('.header');
+  var $aboutDiv = $('.about');
+  var $galleryDiv = $('.gallery');
+  var $contactDiv = $('.contact');
+  var $htmlBodyDiv = $('html, body');
+
+//***----------  N A V I G A T I O N  ------------***//
+
+  //========  J Q U E R Y  ==========//
   // var for menu total visibility
     // main class
     var $navButton = $('.nav__button');
@@ -15,24 +28,74 @@
     var $active = 'active';
     var $notActive = 'notActive';
 
-
   // var for 'menu listed links'
   var $home = $('.nav__list--home');
   var $about = $('.nav__list--about');
   var $gallery = $('.nav__list--gallery');
   var $contact = $('.nav__list--contact');
 
-
-  // var for container div when 'menu listed links' are clicked
-  var $headerDiv = $('.header');
-  var $aboutDiv = $('.about');
-  var $galleryDiv = $('.gallery');
-  var $contactDiv = $('.contact');
-  var $htmlBodyDiv = $('html, body');
-
-
   // var for scroll
   var $scrollTime = 800;
+
+//***----------  H E A D E R  ------------***//
+
+  //========  J Q U E R Y  ==========//
+  var $headerTitle = $('.header__title--name');
+  var $headerLevel = $('.header__level');
+  var $headerHouseWindowLeft = $('.header__house--window-left');
+  var $headerHouseWindowRight = $('.header__house--window-right');
+  var $headerHouseMain = $('.header__house--main');
+  var $headerHouseFrame = $('.header__house--frame');
+  var $headerHouseRoof = $('.header__house--roof');
+  var $headerLogo = $('.header__logo');
+  var $headerHouse = $('.header__house');
+
+  //========  S T R I N G  ==========//
+  var header = '.header';
+  var headerHouse = '.header__house';
+  var headerTitle = '.header__title--name';
+  var headerBox = '.header__house--frame-box';
+  var headerBoxTwo = '.header__house--frame-boxTwo';
+
+
+//***----------  A B O U T  ------------***//
+
+  //========  J Q U E R Y  ==========//
+  var $aboutLevel = $('.about__level');
+  var $aboutPic = $('.about__window-box');
+  var $aboutTitleOne = $('.about__title');
+  var $aboutTitleTwo = $('.about__title-two');
+  var $aboutTitleThree = $('.about__title-three');
+
+  //========  S T R I N G  ==========//
+  var aboutContainer = '.about';
+  var aboutLevel = '.about__level';
+  var aboutTitle ='.about__title';
+  var aboutPic = '.about__window-box';
+
+
+//***----------  G A L L E R Y  ------------***//
+
+  //========  J Q U E R Y  ==========//
+
+
+  //========  S T R I N G  ==========//
+
+
+
+//***----------  C O N T A C T  ------------***//
+
+  //========  J Q U E R Y  ==========//
+  var $contactPapereach = $('.contact__paper--total');
+  var $contactMoon = $('.contact__moon');
+
+  //========  S T R I N G  ==========//
+  var contactContainer = '.contact';
+  var contactTitlePath = '.contact__text--path';
+  var contactTitlePathAfter = '.contact__text--path-after';
+  var contactPapereach = '.contact__paper--total';
+  var contactMoon = '.contact__moon';
+  var contactBox = '.contact__box';
 
 
 
@@ -117,32 +180,15 @@ $contact.click(function() {
 //-----------------------------------------------//
 //----------   M A G I C   ----------------------//
 var controller = new ScrollMagic.Controller();
+
 ///=========================================================================
 //         H E A D E R
 //=========================================================================
-var $headerTitle = $('.header__title--name');
-var $headerHouseOne = $('.header__house--total-one');
-var $headerLevel = $('.header__level');
-var $headerHouseTotal = $('.header__house--total');
-var $headerHouseWindowLeft = $('.header__house--window-left');
-var $headerHouseWindowRight = $('.header__house--window-right');
-var $headerHouseMain = $('.header__house--main');
-var $headerHouseFrame = $('.header__house--frame');
-var $headerHouseRoof = $('.header__house--roof');
-var header = '.header';
-var headerHouse = '.header__house';
-var headerTitle = '.header__title--name';
-var headerBox = '.header__house--frame-box';
-var headerBoxTwo = '.header__house--frame-boxTwo';
-var $headerLogo = $('.header__logo');
-var $headerHouse = $('.header__house');
-
 
 //----------  H o u s e   O n   S c r o l l  ------------//
 var pinHouse = new ScrollMagic.Scene({
   triggerElement: header,
   triggerHook: 0,
-  // duration: 800
   })
   .setPin(headerHouse)
   .addIndicators({name: '1 house (duration: 800)'}) // add indicators (requires plugin)
@@ -154,12 +200,12 @@ var headerTl = new TimelineMax();
 
 headerTl
   .from($headerLevel, 0.7, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
-  .from($headerHouseMain, 0.7, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
-  .from($headerHouseRoof, 0.7, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
-  .from($headerHouseFrame, 0.7, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
-  .from($headerHouseWindowLeft, 0.5, {rotationY: 90, transformOrigin:"0% 99%", ease:Bounce.easeOut})
-  .from($headerHouseWindowRight, 0.5, {rotationY: 90, transformOrigin:"99% 0%", ease:Bounce.easeOut})
-  .from($headerTitle, 0.7, {x:-15, opacity: 0, ease:Power2.easeOut, zIndex: 0}, '-=0.15');
+  .from($headerHouseMain, 0.6, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
+  .from($headerHouseRoof, 0.5, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
+  .from($headerHouseFrame, 0.5, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
+  .from($headerHouseWindowLeft, 0.3, {rotationY: 90, transformOrigin:"0% 99%", ease:Bounce.easeOut})
+  .from($headerHouseWindowRight, 0.3, {rotationY: 90, transformOrigin:"99% 0%", ease:Bounce.easeOut})
+  .from($headerTitle, 0.5, {x:-15, opacity: 0, ease:Power2.easeOut, zIndex: 0}, '-=0.15');
 
 
 //------------  H o u s e   T i t l e  --------------//
@@ -167,8 +213,8 @@ var homeTl = new TimelineMax();
 
 homeTl
   .to($headerLevel, 1, {opacity: 0, ease:Power2.easeOut})
-  .to($headerLogo, 2.3, {y: 440, ease:Linear.easeNone})
-  .to($headerTitle, 1, {opacity: 0, zIndex:0, ease:Power2.easeOut});
+  .to($headerLogo, 2.3, {y: 460, ease:Linear.easeNone})
+  .to($headerTitle, 1, {opacity: 0, scale:1.8, x:'+=10', y:'+=100', zIndex:0, ease:Power2.easeOut});
 
 
 var headerTitle = new ScrollMagic.Scene({
@@ -202,23 +248,13 @@ var headerAbout = new ScrollMagic.Scene({
 //=========================================================================
 //         A B O U T
 //========================================================================
-var aboutContainer = '.about';
-var $imgAboutContainer = $('.about');
-var aboutLevel = '.about__level';
-var $aboutLevel = '.about__level';
-var aboutTitle ='.about__title';
-var $aboutPic = $('.about__window-box');
-var aboutPic = '.about__window-box';
-
-
-
 
 //----------  G a l a x y   B a c k g r o u n d  -----------//
 var galaxyTl = new TimelineMax();
 
 galaxyTl
-  .set($imgAboutContainer,{backgroundSize:'100% 100%'})
-  .to($imgAboutContainer, 0.1, {
+  .set($aboutDiv,{backgroundSize:'100% 100%'})
+  .to($aboutDiv, 0.1, {
   backgroundSize: '+=38% +=38%',
   autoRound:false,
   ease: Power0.easeNone
@@ -234,29 +270,21 @@ var sceneGalaxyZoom = new ScrollMagic.Scene({
 
 //----------  H o u s e   i n   G a l a x y  -----------//
 
-// var pinHouse = new ScrollMagic.Scene({
-//   triggerElement: aboutTitle,
-//   offset: -120,
-//   duration: 300
-//   })
-//   .setPin(headerHouse)
-//   .addIndicators({name: 'house galaxy'}) // add indicators (requires plugin)
-//   .addTo(controller);
-
-//----------  H o u s e   i n   G a l a x y  -----------//
-
 var windowTl = new TimelineMax();
 
 windowTl
-.from($aboutPic, 0.5, {scale: 0, opacity:0, ease:Linear.easeNone})
-.to($headerHouseWindowLeft, 0.5, {rotationY: 180, transformOrigin:"0% 99%", ease:Linear.easeNone})
-.to($headerHouseWindowRight, 0.5, {rotationY: 180, transformOrigin:"99% 0%", ease:Linear.easeNone})
+.from($aboutLevel, 0.3, {y: -15, opacity:0, ease:Linear.easeNone})
+.from($aboutPic, 0.1, {scale: 0, opacity:0, ease:Linear.easeNone})
+.to($headerHouseWindowLeft, 0.3, {rotationY: 180, transformOrigin:"0% 99%", ease:Linear.easeNone})
+.to($headerHouseWindowRight, 0.3, {rotationY: 180, transformOrigin:"99% 0%", ease:Linear.easeNone})
+.to($aboutTitleTwo, 0.3, {scale: 1.5, top: "-=20", opacity: 0.8, ease:Linear.easeNone})
+.to($aboutTitleThree, 0.3, {scale: 2, top: "-=20", opacity: 0.4, ease:Linear.easeNone})
 ;
 
 
 var sceneGalaxyZoom = new ScrollMagic.Scene({
   triggerElement: aboutTitle,
-  offset: -143
+  offset: -170
 })
 .setTween(windowTl)
 .addIndicators({name:'4 window-galaxy'}) //indicate trigger meeting point
@@ -285,11 +313,6 @@ var pinProfile = new ScrollMagic.Scene({
 //===========================================================================
 //         C O N T A C T
 //=========================================================================
-var contactContainer = '.contact';
-var contactTitlePath = '.contact__text--path';
-var contactTitlePathAfter = '.contact__text--path-after';
-
-
 
 //----------  C O N T A C T   T I T L E  -----------//
 function pathPrepare ($el) {
@@ -306,7 +329,7 @@ pathPrepare($contactTitlePath);
 // build tween
 var contactTween = new TimelineMax()
   .add(TweenMax.to($contactTitlePath, 1, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
-  .add(TweenMax.to("path", 1.1, {stroke: "#bdbdbd", ease:Linear.easeNone}), 0);			// change color during the whole thing
+  .add(TweenMax.to("path", 1.1, {stroke: "rgba(232, 212, 143, 0.7)", ease:Linear.easeNone}), 0);			// change color during the whole thing
 
 // build scene
 var scene = new ScrollMagic.Scene({
@@ -325,9 +348,6 @@ var scene = new ScrollMagic.Scene({
 
 
 //----------  C O N T A C T   P A P E R -----------//
-var contactPapereach = '.contact__paper--total';
-var $contactPapereach = $('.contact__paper--total');
-
 
 //loop through elements
 $contactPapereach.each(function(){
@@ -347,9 +367,6 @@ $contactPapereach.each(function(){
 
 
 //----------  C O N T A C T   M O O N -----------//
-var contactMoon = '.contact__moon';
-var $contactMoon = $('.contact__moon');
-var contactBox = '.contact__box';
 var moonTl = new TimelineMax();
 
 moonTl

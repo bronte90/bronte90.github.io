@@ -23,20 +23,24 @@
 //=====================================================================
 .header__house {
   @include transform(translate(5px, 80px));
-  @include absolute_position_center;
-  width: 400px;
+  width: 100%;
+  margin: auto;
+  display: block;
   z-index: 3;
+  @include absolute_position_center;
 }
 
 .header__house--total {
+  width: 400px;
   @include absolute_position_center;
+  margin: auto;
+  display: block;
 }
 
 .header__house--frame{
   @include transform(translateY(60px));
   width: 170px;
   @include box-shadow($insetShadow);
-  @include absolute_position_center;
   @include filter($svgShadowTwo);
 }
 
@@ -45,7 +49,6 @@
   width: 200px;
   height: 250px;
   @include box-shadow($insetShadow);
-  @include absolute_position_center;
 }
 
 .header__house--frame-boxTwo{
@@ -53,31 +56,26 @@
   width: 232px;
   height: 266px;
   @include box-shadow($insetShadow);
-  @include absolute_position_center;
 }
 
 .header__house--main {
   width: 270px;
   @include filter($svgShadow);
-  @include absolute_position_center;
 }
 
 .header__house--roof {
   width: 270px;
   @include filter($svgShadowTwo);
-  @include absolute_position_center;
 }
 
 .header__house--window-left {
   @include transform(translate(-26px, 122px));
   width: $windowSize;
-  @include absolute_position_center;
 }
 
 .header__house--window-right {
   @include transform(translate(26px, 122px));
   width: $windowSize;
-  @include absolute_position_center;
 }
 
 //====================================================================
@@ -86,11 +84,13 @@
 .header__level {
   @include level_fonts;
   @include transform(translate(8px, 60px));
-  color: $numberColor;
+  color: $yellowColor;
 }
 
 .header__title--name {
   @include title_fonts;
+  color: $titleColor;
+  opacity: 0.8;
   @include transform(translate(25px, 400px));
   position: absolute;
   z-index: 0;

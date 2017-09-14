@@ -157,10 +157,8 @@
 //-----------------  F O N T S
 //---------------------------------------------------------------
 @mixin title_fonts {
-  color: $titleColor;
   font-family: $titleFont;
   font-size: 2em;
-  opacity: 0.8;
   letter-spacing: 3.5px;
   width: 200px;
   text-shadow: $textShadow;

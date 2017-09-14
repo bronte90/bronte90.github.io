@@ -22,39 +22,6 @@
 }
 
 
-
-//=====================================================================
-//  C O N T A I N E R    L I N E
-//=====================================================================
-.contact__line-one{
-  @include absolute_position_center;
-  width: 220px;
-  height: 1.5px;
-  background-color: $nudeTwoColor;
-  @include transform(translate(64px, 580px));
-  z-index: 2;
-  @include filter($svgShadowTwo);
-}
-
-.contact__line-two{
-  @include absolute_position_center;
-  width: 1.5px;
-  height: 292px;
-  background-color: $nudeTwoColor;
-  @include transform(translate(-46px, 292px));
-}
-
-.contact__line-three{
-  @include absolute_position_center;
-  width: 167px;
-  height: 1.5px;
-  background-color: $nudeTwoColor;
-  @include transform(translate(-107px, 634px) rotate(-40deg));
-}
-
-
-
-
 //=====================================================================
 //  P A P E R
 //=====================================================================
@@ -129,5 +96,6 @@
   z-index: 3;
   width: 90px;
   @include transform(translateY(450px));
-  @include filter($svgShadowTwo);
+  @include filter($svgShadowTwo brightness(0.9) contrast(130%));
+  opacity: 0.8;
 }

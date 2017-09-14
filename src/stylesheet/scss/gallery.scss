@@ -14,6 +14,8 @@
 //=====================================================================
 .gallery__title {
   @include title_fonts;
+  color: $titleColor;
+  opacity: 0.8;
   @include transform(translate(12px, 590px));
 }
 
