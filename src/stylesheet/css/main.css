@@ -365,19 +365,20 @@
   transform: translate(40px, 500px); }
 
 .about__window-box {
-  width: 120px;
-  height: 170px;
-  background-color: rgba(0, 0, 0, 0.7);
+  width: 95px;
+  z-index: 0;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
-  -moz-transform: translateY(300px);
-  -o-transform: translateY(300px);
-  -ms-transform: translateY(300px);
-  -webkit-transform: translateY(300px);
-  transform: translateY(300px); }
+  -moz-transform: translate(5px, 370px);
+  -o-transform: translate(5px, 370px);
+  -ms-transform: translate(5px, 370px);
+  -webkit-transform: translate(5px, 370px);
+  transform: translate(5px, 370px);
+  -webkit-filter: brightness(0.7) contrast(110%);
+  filter: brightness(0.7) contrast(110%); }
 
 .gallery {
   margin: 0;

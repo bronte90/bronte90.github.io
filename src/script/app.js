@@ -142,7 +142,7 @@ var $headerHouse = $('.header__house');
 var pinHouse = new ScrollMagic.Scene({
   triggerElement: header,
   triggerHook: 0,
-  duration: 800
+  // duration: 800
   })
   .setPin(headerHouse)
   .addIndicators({name: '1 house (duration: 800)'}) // add indicators (requires plugin)
@@ -157,8 +157,8 @@ headerTl
   .from($headerHouseMain, 0.7, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseRoof, 0.7, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseFrame, 0.7, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
-  .from($headerHouseWindowLeft, 0.7, {rotationY: 90, transformOrigin:"0% 90%", ease:Bounce.easeOut})
-  .from($headerHouseWindowRight, 0.7, {rotationY: 90, transformOrigin:"90% 0%", ease:Bounce.easeOut})
+  .from($headerHouseWindowLeft, 0.5, {rotationY: 90, transformOrigin:"0% 99%", ease:Bounce.easeOut})
+  .from($headerHouseWindowRight, 0.5, {rotationY: 90, transformOrigin:"99% 0%", ease:Bounce.easeOut})
   .from($headerTitle, 0.7, {x:-15, opacity: 0, ease:Power2.easeOut, zIndex: 0}, '-=0.15');
 
 
@@ -166,8 +166,8 @@ headerTl
 var homeTl = new TimelineMax();
 
 homeTl
-  .to($headerLevel, 0.4, {y: 30, opacity: 0, ease:Power2.easeOut})
-  .to($headerLogo, 2.7, {y: 440, ease:Linear.easeNone})
+  .to($headerLevel, 1, {opacity: 0, ease:Power2.easeOut})
+  .to($headerLogo, 2.3, {y: 440, ease:Linear.easeNone})
   .to($headerTitle, 1, {opacity: 0, zIndex:0, ease:Power2.easeOut});
 
 
@@ -186,8 +186,8 @@ var headerTitle = new ScrollMagic.Scene({
 var  homeAboutTl = new TimelineMax();
 
 homeAboutTl
-  .to($headerHouseRoof, 2, {rotationX:-90, transformOrigin:"0% 90%", ease:Linear.easeNone})
-  .to($headerHouseMain, 2, {rotationX:-90, transformOrigin:"0% 90%", ease:Linear.easeNone});
+  .to($headerHouseRoof, 2, {rotationX:-90, transformOrigin:"0% 99%", ease:Linear.easeNone})
+  .to($headerHouseMain, 2, {rotationX:-90, transformOrigin:"0% 99%", ease:Linear.easeNone});
 
 
 var headerAbout = new ScrollMagic.Scene({
@@ -207,6 +207,9 @@ var $imgAboutContainer = $('.about');
 var aboutLevel = '.about__level';
 var $aboutLevel = '.about__level';
 var aboutTitle ='.about__title';
+var $aboutPic = $('.about__window-box');
+var aboutPic = '.about__window-box';
+
 
 
 
@@ -231,14 +234,46 @@ var sceneGalaxyZoom = new ScrollMagic.Scene({
 
 //----------  H o u s e   i n   G a l a x y  -----------//
 
-var pinHouse = new ScrollMagic.Scene({
+// var pinHouse = new ScrollMagic.Scene({
+//   triggerElement: aboutTitle,
+//   offset: -120,
+//   duration: 300
+//   })
+//   .setPin(headerHouse)
+//   .addIndicators({name: 'house galaxy'}) // add indicators (requires plugin)
+//   .addTo(controller);
+
+//----------  H o u s e   i n   G a l a x y  -----------//
+
+var windowTl = new TimelineMax();
+
+windowTl
+.from($aboutPic, 0.5, {scale: 0, opacity:0, ease:Linear.easeNone})
+.to($headerHouseWindowLeft, 0.5, {rotationY: 180, transformOrigin:"0% 99%", ease:Linear.easeNone})
+.to($headerHouseWindowRight, 0.5, {rotationY: 180, transformOrigin:"99% 0%", ease:Linear.easeNone})
+;
+
+
+var sceneGalaxyZoom = new ScrollMagic.Scene({
   triggerElement: aboutTitle,
-  offset: -120,
-  duration: 500
+  offset: -143
+})
+.setTween(windowTl)
+.addIndicators({name:'4 window-galaxy'}) //indicate trigger meeting point
+.addTo(controller);
+
+
+//----------  P i n   P r o f i l e   P i c  -----------//
+var pinProfile = new ScrollMagic.Scene({
+  triggerElement: aboutTitle,
+  offset: -147
   })
-  .setPin(headerHouse)
-  .addIndicators({name: 'house galaxy'}) // add indicators (requires plugin)
+  .setPin(aboutPic)
+  .addIndicators({name: 'pin profile'}) // add indicators (requires plugin)
   .addTo(controller);
+
+
+
 
 
 //==========================================================================
@@ -297,7 +332,7 @@ var $contactPapereach = $('.contact__paper--total');
 //loop through elements
 $contactPapereach.each(function(){
   //build a tween
-  var tween = TweenMax.to($(this), 0.3, {margin: '+=20', x:'-=20', ease:Linear.easeNone});
+  var tween = TweenMax.to($(this), 0.2, {margin: '+=20', x:'-=20', ease:Linear.easeNone});
 
   //build scene
   var paperScene = new ScrollMagic.Scene({

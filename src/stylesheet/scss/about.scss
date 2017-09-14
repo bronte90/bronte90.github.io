@@ -24,9 +24,9 @@ background-blend-mode: hard-light;
 }
 
 .about__window-box {
-  width: 120px;
-  height:170px;
-  background-color: $opaqueBlack;
+  width: 95px;
+  z-index: 0;
   @include absolute_position_center;
-  @include transform(translateY(300px));
+  @include transform(translate(5px, 370px));
+  @include filter(brightness(0.7) contrast(110%));
 }
