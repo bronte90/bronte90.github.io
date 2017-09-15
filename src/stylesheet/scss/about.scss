@@ -19,13 +19,28 @@ background-blend-mode: hard-light;
 }
 
 .about__title {
-  @include title_fonts;
-  color: $nudeColor;
+  @include about_title;
+  opacity: 0.8;
+}
+
+.about__title-two {
+  @include about_title;
+  opacity: 0.6;
+}
+
+.about__title-three {
+  @include about_title;
   opacity: 0.4;
-  letter-spacing: 6px;
-  @include transform(translateY(500px) scale(1.5));
-  text-align: center;
-  width: 400px;
+}
+
+.about__title-four {
+  @include about_title;
+  opacity: 0.2;
+}
+
+.about__title-five {
+  @include about_title;
+  opacity: 0.1;
 }
 
 .about__window-box--photo {

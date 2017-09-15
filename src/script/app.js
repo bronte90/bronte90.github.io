@@ -64,6 +64,11 @@
   var $aboutLevel = $('.about__level');
   var $aboutPic = $('.about__window-box');
   var $aboutTitle = $('.about__title');
+  var $aboutTitleTwo = $('.about__title-two');
+  var $aboutTitleThree = $('.about__title-three');
+  var $aboutTitleFour = $('.about__title-four');
+  var $aboutTitleFive = $('.about__title-five');
+
 
   //========  S T R I N G  ==========//
   var aboutContainer = '.about';
@@ -278,7 +283,11 @@ windowTl
 .from($aboutPic, 0.1, {scale: 0, opacity:0, ease:Linear.easeNone})
 .to($headerHouseWindowLeft, 0.23, {rotationY: 180, transformOrigin:"0% 99%", ease:Linear.easeNone})
 .to($headerHouseWindowRight, 0.23, {rotationY: 180, transformOrigin:"99% 0%", ease:Linear.easeNone})
-.to($aboutTitle, 1, {scale:2.5, ease:Linear.easeNone})
+.to($aboutTitleFive, 1, {scale: 4.6, y: "-=166", ease:Linear.easeNone})
+.to($aboutTitleFour, 1, {scale: 3.9, y: "-=126", ease:Linear.easeNone})
+.to($aboutTitleThree, 1, {scale: 3.5, y: "-=86", ease:Linear.easeNone})
+.to($aboutTitleTwo, 1, {scale: 2.7, y: "-=46", ease:Linear.easeNone})
+.to($aboutTitle, 1, {scale: 2.2, ease:Linear.easeNone})
 ;
 
 

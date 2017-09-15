@@ -171,3 +171,12 @@
   text-shadow: $textShadow;
   width: 200px;
 }
+
+@mixin about_title {
+  @include title_fonts;
+  color: $nudeColor;
+  letter-spacing: 4.2px;
+  @include transform(translateY(500px) scale(1.5));
+  text-align: center;
+  width: 400px;
+}
