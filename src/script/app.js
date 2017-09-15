@@ -68,6 +68,8 @@
   var $aboutTitleThree = $('.about__title-three');
   var $aboutTitleFour = $('.about__title-four');
   var $aboutTitleFive = $('.about__title-five');
+  var $aboutBlinders = $('.about__window-box--blinders-each');
+  var $aboutBlindersBox = $('.about__window-box--blinders');
 
 
   //========  S T R I N G  ==========//
@@ -210,7 +212,7 @@ headerTl
   .from($headerHouseFrame, 0.5, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseWindowLeft, 0.3, {rotationY: 90, transformOrigin:"0% 99%", opacity: 0, ease:Bounce.easeOut})
   .from($headerHouseWindowRight, 0.3, {rotationY: 90, transformOrigin:"99% 0%", opacity: 0, ease:Bounce.easeOut})
-  .to($headerTitle, 1.7, {text: "BRONTË", scale:1.6}, '-=3')
+  .to($headerTitle, 1.7, {text: "BRONTË", scale:1.3}, '-=3')
   .to($headerTitle, 2, {text: "FRONTEND DEVELOPER", scale:1}, '-=0.25');
 
 
@@ -260,15 +262,11 @@ var galaxyTl = new TimelineMax();
 
 galaxyTl
   .set($aboutDiv,{backgroundSize:'100% 100%'})
-  .to($aboutDiv, 0.1, {
-  backgroundSize: '+=38% +=38%',
-  autoRound:false,
-  ease: Power0.easeNone
-});
+  .to($aboutDiv, 0.2, {backgroundSize: '+=45% +=45%', autoRound:false, ease: Power0.easeNone});
 
 
 var sceneGalaxyZoom = new ScrollMagic.Scene({
-  triggerElement: aboutContainer
+  triggerElement: aboutContainer,
 })
 .setTween(galaxyTl)
 .addIndicators({name:'2 - galaxy'}) //indicate trigger meeting point
@@ -276,29 +274,69 @@ var sceneGalaxyZoom = new ScrollMagic.Scene({
 
 //----------  H o u s e   i n   G a l a x y  -----------//
 
-var windowTl = new TimelineMax();
+//--- SCENE 1: Scrolling down title, profilepic and windows open up
+var aboutTl = new TimelineMax();
 
-windowTl
+aboutTl
 .from($aboutLevel, 0.2, {y: -15, opacity:0, ease:Linear.easeNone})
-.from($aboutPic, 0.1, {scale: 0, opacity:0, ease:Linear.easeNone})
-.to($headerHouseWindowLeft, 0.23, {rotationY: 180, transformOrigin:"0% 99%", ease:Linear.easeNone})
-.to($headerHouseWindowRight, 0.23, {rotationY: 180, transformOrigin:"99% 0%", ease:Linear.easeNone})
-.to($aboutTitleFive, 1, {scale: 4.6, y: "-=166", ease:Linear.easeNone})
+.add("picAppear")
+.to($headerHouseWindowLeft, 0.5, {rotationY: 180, transformOrigin:"0% 99%", ease:Linear.easeNone}, "picAppear")
+.to($headerHouseWindowRight, 0.5, {rotationY: 180, transformOrigin:"99% 0%", ease:Linear.easeNone})
+.from($aboutPic, 0.9, {scale: 0, opacity:0, ease:Linear.easeNone}, "picAppear")
+.to($aboutTitleFive, 1, {scale: 4.6, y: "-=166", ease:Linear.easeNone}, "+=1")
 .to($aboutTitleFour, 1, {scale: 3.9, y: "-=126", ease:Linear.easeNone})
 .to($aboutTitleThree, 1, {scale: 3.5, y: "-=86", ease:Linear.easeNone})
 .to($aboutTitleTwo, 1, {scale: 2.7, y: "-=46", ease:Linear.easeNone})
 .to($aboutTitle, 1, {scale: 2.2, ease:Linear.easeNone})
 ;
 
-
-var sceneGalaxyZoom = new ScrollMagic.Scene({
+var sceneGalaxyScroll = new ScrollMagic.Scene({
   triggerElement: aboutTitle,
   offset: -230,
-  duration: 300
+  duration: 430
+})
+.setTween(aboutTl)
+.addIndicators({name:'4 galaxy'}) //indicate trigger meeting point
+.addTo(controller);
+
+//--- SCENE 2: Window fram zooms, profile and pic description appears
+var windowTl = new TimelineMax();
+
+windowTl
+.add("zoom")
+.to($headerHouse, 0.5, {scale: 1.6, y: "-=150", opacity: 0, ease:Linear.easeNone}, "zoom")
+.to($aboutPic, 0.5, {scale: 1.6, y: "-=310", opacity: 0, ease:Linear.easeNone}, "zoom")
+;
+
+var windowGalaxyScroll = new ScrollMagic.Scene({
+  triggerElement: aboutTitle,
+  offset: +80,
+  duration: 250
 })
 .setTween(windowTl)
-.addIndicators({name:'4 window-galaxy'}) //indicate trigger meeting point
+.addIndicators({name:'5 galaxy'}) //indicate trigger meeting point
 .addTo(controller);
+
+
+//--- SCENE 3: Loop to close blinds
+
+$aboutBlinders.each(function(){
+  //build a tween
+  var blinderTween = TweenMax.to($(this), 1, {rotationX: -11, ease:Linear.easeNone});
+
+  //build scene
+  var blindersScene = new ScrollMagic.Scene({
+    triggerElement: aboutContainer,
+    offset: 680,
+    duration: 140
+  })
+  .setTween(blinderTween)
+  .addIndicators({name:'blinds'}) // add indicators (requires plugin)
+  .addTo(controller)
+  ;
+});
+
+
 
 // ----------------  P I N S  I N  G A L A X Y
 //----------------------------------------------------------------------
@@ -337,8 +375,8 @@ pathPrepare($contactTitlePath);
 
 // build tween
 var contactTween = new TimelineMax()
-  .add(TweenMax.to($contactTitlePath, 1, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
-  .add(TweenMax.to("path", 1.1, {stroke: "rgba(232, 212, 143, 0.7)", ease:Linear.easeNone}), 0);			// change color during the whole thing
+  .add(TweenMax.to($contactTitlePath, 2, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
+  .add(TweenMax.to("path", 2.1, {stroke: "rgba(246,246,246, 0.4)", ease:Linear.easeNone}), 0);			// change color during the whole thing
 
 // build scene
 var scene = new ScrollMagic.Scene({
@@ -361,7 +399,7 @@ var scene = new ScrollMagic.Scene({
 //loop through elements
 $contactPapereach.each(function(){
   //build a tween
-  var tween = TweenMax.to($(this), 0.2, {margin: '+=20', x:'-=20', ease:Linear.easeNone});
+  var tween = TweenMax.to($(this), 0.23, {margin: '+=20', x:'-=20', ease:Linear.easeNone});
 
   //build scene
   var paperScene = new ScrollMagic.Scene({

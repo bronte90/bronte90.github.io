@@ -15,7 +15,7 @@ background-blend-mode: hard-light;
 .about__level {
   @include level_fonts;
   color: $nudeColor;
-  @include transform(translate(-10px, 160px));
+  @include transform(translate(-10px, 180px));
 }
 
 .about__title {
@@ -48,15 +48,23 @@ background-blend-mode: hard-light;
   z-index: 0;
   @include absolute_position_center;
   @include transform(translate(5px, 370px));
-  @include filter(brightness(0.7) contrast(110%));
+  @include filter(brightness(0.7) contrast(130%));
+}
+
+.about__window-box--photo {
+  @include absolute_position_center;
+  @include transform(translate(5px, 383px));
 }
 
 .about__window-box--blinders {
   width: 111px;
-  height: 160px;
+  height: 150px;
   @include absolute_position_center;
-  @include transform(translateY(300px));
+  @include transform(translateY(330px));
   list-style: none;
+  font-family: $titleFont;
+  color: $blueColor;
+  font-size: 1em;
 }
 
 .about__window-box--blinders-each {
@@ -65,5 +73,16 @@ background-blend-mode: hard-light;
   height: 26.67px;
   @include transform(translateX(-35px) rotateX(65deg));
   @include transformOrigin(top);
-  @include box-shadow($mainShadow);
+}
+
+
+//====================================================================
+//  B A C K G R O U N D   T R A N S I T I O N
+//====================================================================
+.about__transition {
+  position: absolute;
+  width: 100%;
+  height:200px;
+  background-color: $nudeColor;
+  @include transform(skewY(7deg) translateY(1870px));
 }

@@ -24,3 +24,24 @@
   color: $opaqueBlue;
   @include transform(translate(-10px, 570px));
 }
+
+//====================================================================
+//  B A C K G R O U N D   T R A N S I T I O N
+//====================================================================
+.gallery__transition {
+  position: absolute;
+  width: 100%;
+  height:200px;
+  background-color: $nudeTwoColor;
+  z-index: 2;
+  @include transform(skewY(-7deg) translateY(670px));
+}
+
+.gallery__transition-two {
+  position: absolute;
+  width: 150%;
+  height:230px;
+  background-color: $nudeThreeColor;
+  opacity: 0.5;
+  @include transform(skewY(7deg) translateY(690px));
+}

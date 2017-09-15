@@ -84,7 +84,7 @@
 .header__level {
   @include level_fonts;
   @include transform(translate(8px, 60px));
-  color: $yellowColor;
+  color: $superYellowColor;
 }
 
 .header__title--name {
@@ -97,4 +97,15 @@
   width: 100%;
   text-align: center;
   padding: 20px;
+}
+
+//====================================================================
+//  B A C K G R O U N D   T R A N S I T I O N
+//====================================================================
+.header__transition {
+  position: absolute;
+  width: 100%;
+  height:200px;
+  background-color: $blueColor;
+  @include transform(skewY(-8deg) translateY(700px));
 }

@@ -3,39 +3,27 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="42.5px" height="127.667px" viewBox="0 0 42.5 127.667" enable-background="new 0 0 42.5 127.667" xml:space="preserve">
-<defs>
- <filter id="inset-shadow" x="-50%" y="-50%" width="200%" height="200%">
-   <feComponentTransfer in="SourceAlpha">
-     <feFuncA type="table" tableValues="1 0" />
-   </feComponentTransfer>
-   <feGaussianBlur stdDeviation="3"/>
-   <feOffset dx="5" dy="5" result="offsetblur"/>
-   <feFlood floodColor="rgb(20, 0, 0)" result="color"/>
-   <feComposite in2="offsetblur" operator="in"/>
-   <feComposite in2="SourceAlpha" operator="in" />
-   <feMerge>
-     <feMergeNode in="SourceGraphic" />
-     <feMergeNode />
-   </feMerge>
- </filter>
-</defs>
+<filter  height="200%" width="200%" id="inset-shadow" x="-50%" y="-50%">
+	<feComponentTransfer  in="SourceAlpha">
+		<feFuncA  type="table" tableValues="1 0"></feFuncA>
+	</feComponentTransfer>
+	<feGaussianBlur  stdDeviation="3"></feGaussianBlur>
+	<feOffset  dy="5" result="offsetblur" dx="5"></feOffset>
+	<feFlood  result="color" floodColor="rgb(20, 0, 0)"></feFlood>
+	<feComposite  in2="offsetblur" operator="in"></feComposite>
+	<feComposite  in2="SourceAlpha" operator="in"></feComposite>
+	<feMerge>
+		<feMergeNode  in="SourceGraphic"></feMergeNode>
+		<feMergeNode></feMergeNode>
+	</feMerge>
+</filter>
 <g id="left-window">
-	<path fill="#A1A1A1" d="M0,0v127.667h42.5V0H0z M35,120H8.28V61.167H35V120z M35,53.75H8.28V7.5H35V53.75z"/>
-	<rect filter="url(#inset-shadow)" x="8.28" y="7.583" opacity="0.7" fill="#EFEFEF" width="26.72" height="46.25"/>
-	<rect filter="url(#inset-shadow)" x="8.28" y="61.25" opacity="0.7" fill="#EFEFEF" width="26.72" height="58.833"/>
-	<g display="inline">
-		<polygon fill="none" points="77.72,-11.85 43,-34.901 8.28,-11.85 		"/>
-		<polygon fill="none" points="81.593,-12.7 43.002,-38.323 43.005,-38.319 		"/>
-		<polygon fill="#EFEFEF" points="4.037,-21.371 42.625,-46.99 42.628,-46.994 42.63,-46.993 42.632,-46.994 42.634,-46.99
-			81.223,-21.371 102.125,-21.371 102.125,-20.333 105.26,-20.333 105.26,-23.333 83.256,-23.333 42.635,-50.302 42.632,-50.306
-			42.63,-50.305 42.628,-50.306 42.625,-50.302 2.004,-23.333 -20,-23.333 -20,-20.333 -16.866,-20.333 -16.866,-21.371 		"/>
-		<polygon fill="#A1A1A1" points="42.63,-43.572 80.625,-18.521 98.917,-18.521 102.125,-18.521 102.125,-20.333 102.125,-21.371
-			81.223,-21.371 42.634,-46.99 42.632,-46.994 42.63,-46.993 42.628,-46.994 42.625,-46.99 4.037,-21.371 -16.866,-21.371
-			-16.866,-20.333 -16.866,-18.521 -14.25,-18.521 4.792,-18.583 		"/>
-		<path fill="#A1A1A1" d="M43.005-38.319l-0.003-0.004L4.407-12.7h-20.903v2.85h3.996v2.1H97.875v-2.1h4.621v-2.85H81.593
-			L43.005-38.319z M77.72-11.85H8.28L43-34.901L77.72-11.85z"/>
-		<polygon fill="#EFEFEF" points="80.625,-18.521 42.63,-43.572 4.792,-18.583 -14.25,-18.521 -11.375,-16 -16.496,-12.7
-			4.407,-12.7 43.002,-38.323 81.593,-12.7 102.496,-12.7 97.292,-15.875 98.917,-18.521 		"/>
+	<path fill="#999898" d="M0,0v127.667h42.5V0H0z M35,120H8.28V61.167H35V120z M35,53.75H8.28V7.5H35V53.75z"/>
+	<g opacity="0.7" filter="url(#inset-shadow)" enable-background="new    ">
+		<rect x="8.28" y="7.583" fill="#EFEFEF" width="26.72" height="46.25"/>
+	</g>
+	<g opacity="0.7" filter="url(#inset-shadow)" enable-background="new    ">
+		<rect x="8.28" y="61.25" fill="#EFEFEF" width="26.72" height="58.833"/>
 	</g>
 </g>
 </svg>
