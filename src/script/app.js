@@ -210,8 +210,10 @@ headerTl
   .from($headerHouseMain, 0.6, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseRoof, 0.5, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseFrame, 0.5, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
-  .from($headerHouseWindowLeft, 0.3, {rotationY: 90, transformOrigin:"0% 99%", opacity: 0, ease:Bounce.easeOut})
-  .from($headerHouseWindowRight, 0.3, {rotationY: 90, transformOrigin:"99% 0%", opacity: 0, ease:Bounce.easeOut})
+  .set($headerHouseWindowLeft, {rotationY: 0, transformOrigin:"0% 99%", opacity: 0, zIndex:2})
+  .set($headerHouseWindowRight, {rotationY: 0, transformOrigin:"0% 99%", opacity: 0, zIndex:2})
+  .from($headerHouseWindowLeft, 0.3, {rotationY: -180, transformOrigin:"0% 99%", opacity: 0, zIndex:2, ease:Bounce.easeOut})
+  .from($headerHouseWindowRight, 0.3, {rotationY: -180, transformOrigin:"99% 0%", opacity: 0, zIndex:2, ease:Bounce.easeOut})
   .to($headerTitle, 1.7, {text: "BRONTË", scale:1.3}, '-=3')
   .to($headerTitle, 2, {text: "FRONTEND DEVELOPER", scale:1}, '-=0.25');
 
@@ -280,8 +282,8 @@ var aboutTl = new TimelineMax();
 aboutTl
 .from($aboutLevel, 0.2, {y: -15, opacity:0, ease:Linear.easeNone})
 .add("picAppear")
-.to($headerHouseWindowLeft, 0.5, {rotationY: 180, transformOrigin:"0% 99%", ease:Linear.easeNone}, "picAppear")
-.to($headerHouseWindowRight, 0.5, {rotationY: 180, transformOrigin:"99% 0%", ease:Linear.easeNone})
+.to($headerHouseWindowLeft, 0.6, {rotationY: -180, transformOrigin:"0% 99%", zIndex: 2, ease:Linear.easeNone}, "picAppear")
+.to($headerHouseWindowRight, 0.6, {rotationY: -180, transformOrigin:"99% 0%", zIndex: 2, ease:Linear.easeNone})
 .from($aboutPic, 0.9, {scale: 0, opacity:0, ease:Linear.easeNone}, "picAppear")
 .to($aboutTitleFive, 1, {scale: 4.6, y: "-=166", ease:Linear.easeNone}, "+=1")
 .to($aboutTitleFour, 1, {scale: 3.9, y: "-=126", ease:Linear.easeNone})
@@ -343,7 +345,7 @@ $aboutBlinders.each(function(){
     //----------  P i n   P r o f i l e   P i c  -----------//
 var pinProfile = new ScrollMagic.Scene({
   triggerElement: aboutContainer,
-  offset: 380
+  offset: 350
   })
   .setPin(aboutPic)
   .addIndicators({name: 'pin profile'}) // add indicators (requires plugin)

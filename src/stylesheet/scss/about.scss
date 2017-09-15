@@ -12,6 +12,9 @@ background-blend-mode: hard-light;
 @include transition(5s ease);
 }
 
+//====================================================================
+//  T I T L E  /  L E V E L
+//====================================================================
 .about__level {
   @include level_fonts;
   color: $nudeColor;
@@ -43,18 +46,24 @@ background-blend-mode: hard-light;
   opacity: 0.1;
 }
 
+
+//====================================================================
+//  P I C T U R E
+//====================================================================
+.about__window-box {
+  @include absolute_position_center;
+  width: 250px;
+  @include transform(translateY(-45px));
+}
+
 .about__window-box--photo {
   width: 95px;
   z-index: 0;
   @include absolute_position_center;
-  @include transform(translate(5px, 370px));
+  @include transform(translate(5px, 380px));
   @include filter(brightness(0.7) contrast(130%));
 }
 
-.about__window-box--photo {
-  @include absolute_position_center;
-  @include transform(translate(5px, 383px));
-}
 
 .about__window-box--blinders {
   width: 111px;
@@ -77,6 +86,62 @@ background-blend-mode: hard-light;
 
 
 //====================================================================
+//  P R O F I L E    D E S C R I P T I O N
+//====================================================================
+.about__profile {
+  @include about_subbox_main;
+  @include transform(translateY(990px));
+  @include about_subbox_size-one;
+}
+
+.about__profile::before {
+  @include about_subbox_right;
+  top: 0;
+  left: 40%;
+  @include about_subbox_size-one;
+}
+
+.about__profile::after {
+  @include about_subbox_left;
+  top: 0;
+  left: -70%;
+  @include about_subbox_size-one;
+}
+
+.about__sub-one {
+  @include about_subbox_number;
+  @include transform(translate(-140px, 920px));
+}
+
+.about__sub-two {
+  @include about_subbox_number;
+  @include transform(translate(140px, 980px));
+}
+
+.about__skills {
+  @include about_subbox_main;
+  @include transform(translateY(1050px));
+  @include about_subbox_size-two;
+}
+
+.about__skills::before {
+  @include about_subbox_right;
+  top: 0;
+  left: 40%;
+  @include about_subbox_size-two;
+}
+
+.about__skills::after {
+  @include about_subbox_left;
+  top: 0;
+  left: -70%;
+  @include about_subbox_size-two;
+}
+
+
+
+
+//====================================================================
 //  B A C K G R O U N D   T R A N S I T I O N
 //====================================================================
 .about__transition {
@@ -84,5 +149,5 @@ background-blend-mode: hard-light;
   width: 100%;
   height:200px;
   background-color: $nudeColor;
-  @include transform(skewY(7deg) translateY(1870px));
+  @include transform(skewY(5deg) translateY(1600px));
 }

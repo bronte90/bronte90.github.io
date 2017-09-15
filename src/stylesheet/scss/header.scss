@@ -71,11 +71,13 @@
 .header__house--window-left {
   @include transform(translate(-26px, 122px));
   width: $windowSize;
+  z-index: 2;
 }
 
 .header__house--window-right {
   @include transform(translate(26px, 122px));
   width: $windowSize;
+  z-index: 2;
 }
 
 //====================================================================
@@ -91,7 +93,7 @@
   @include title_fonts;
   color: $titleColor;
   opacity: 0.8;
-  @include transform(translateY(380px));
+  @include transform(translateY(380px)rotateY(0));
   z-index: 0;
   @include absolute_position_center;
   width: 100%;

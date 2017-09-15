@@ -182,6 +182,52 @@
 }
 
 
-
 //-----------------  B A C K G R O U N D
 //---------------------------------------------------------------
+@mixin about_subbox_size-one {
+  width: 200px;
+  height: 300px;
+}
+
+@mixin about_subbox_size-two {
+  width: 210px;
+  height: 405px;
+}
+
+@mixin about_subbox_main {
+  background-color: black;
+  color: $titleColor;
+  @include relative_position_center;
+  font-family: $titleFont;
+  letter-spacing: 3px;
+  line-height: 27px;
+  padding-top: 5.5%;
+  font-size: 0.8em;
+  @include filter($svgShadowTwo);
+  text-align: center;
+}
+
+@mixin about_subbox_right {
+  @include absolute_position_center;
+  background-color: black;
+  content:'';
+  z-index: -1;
+  @include transform(skew(20deg));
+}
+
+@mixin about_subbox_left {
+  @include absolute_position_center;
+  background-color: black;
+  content:'';
+  z-index: -1;
+  @include transform(skew(20deg));
+}
+
+@mixin about_subbox_number {
+  color: $nudeThreeColor;
+  text-shadow: $textShadow;
+  font-size: 9em;
+  @include absolute_position_center;
+  z-index: 1;
+  width: 200px;
+}
