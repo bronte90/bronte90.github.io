@@ -60,7 +60,7 @@
 }
 
 .nav__button.notActive {
-  border-color: transparent transparent $redColor transparent;
+  border-color: transparent transparent $blueColor transparent;
 }
 
 .nav__button.active .nav__button--icon-open {
@@ -111,7 +111,7 @@
   letter-spacing: 5px;
   @include transition(0.2s ease-in-out);
   &:hover {
-    color: $yellowColor;
+    color: $nudeColor;
     opacity: 1;
     font-size: 2em;
     cursor: pointer;

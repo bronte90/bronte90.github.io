@@ -48,8 +48,8 @@
 //=====================================================================
 .contact__level {
   @include level_fonts;
-  @include transform(translate(247px, 245px));
-  color: $yellowColor;
+  @include transform(translate(247px, 240px));
+  color: $nudeColorDarker;
 }
 
 //=====================================================================

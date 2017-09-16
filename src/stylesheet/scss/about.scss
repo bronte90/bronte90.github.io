@@ -148,7 +148,7 @@ background-blend-mode: hard-light;
 .about__transition {
   position: absolute;
   width: 100%;
-  height:200px;
-  background-color: $nudeColor;
+  height:300px;
+  background-color: $nudeThreeColor;
   @include transform(skewY(5deg) translateY(1400px));
 }

@@ -1,6 +1,6 @@
 [
   {
-    "projectTitle": "React Redux Portfolio",
+    "projectTitle": "React Redux",
     "projectDescription": "Project utilizing React, Redux, HTML, Gulp, Illustrator, CSS and SASS",
     "projectImage": {
       "projectImageLarge": "../dist/images/portfolio-large.png",
@@ -41,7 +41,7 @@
   },
   {
     "projectTitle": "Frogger Game Arcade",
-    "projectDescription": "Utilizes Javascript Object Orientated Programming, as part of Udacity FEND project",
+    "projectDescription": "Utilizes Javascript Object Orientated Programming, as part of Udacity",
     "projectImage": {
       "projectImageLarge": "../dist/images/gamearcade-large.png",
       "projectImageMedium": "../dist/images/gamearcade-medium.png",

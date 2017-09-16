@@ -3,7 +3,7 @@
 //=====================================================================
 .gallery {
   margin: 0;
-  background-color: $nudeColor;
+  background-color: $nudeThreeColor;
   width: 100%;
   position: relative;
   padding-bottom: 260px;
@@ -14,12 +14,12 @@
 //=====================================================================
 .gallery__title {
   color: $titleColor;
-  font-family: $titleFont;
+  // font-family: $titleFont;
   font-size: 4.5em;
   opacity: 0.8;
   @include absolute_position_center;
   width: 400px;
-  @include transform(translate(12px, -240px) skewY(5deg));
+  @include transform(translate(12px, -240px));
   text-shadow: $textShadow;
 }
 
@@ -29,7 +29,7 @@
   width: 200px;
   text-shadow: $textShadow;
   font-size: 7em;
-  color: $brownColor;
+  color: $nudeColor;
   @include transform(translate(210px, -250px));
 }
 
@@ -37,17 +37,127 @@
   list-style: none;
   font-family: $titleFont;
   color: $titleColor;
-  font-size: 1em;
   flex-direction: row;
   flex-wrap: wrap;
   display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  @include transition (1s ease-in-out);
+}
+
+.gallery__projects--box {
+  width: 300px;
+  height: 450px;
+  @include box-shadow($insetShadow);
+  display: block;
+  position: relative;
+  background-color: $nudeColorDarker;
+  @include transform(translateX(33px));
+  @include transition (1s ease-in-out);
+}
+
+.gallery__projects--each::before {
+  content: '';
+  width: 340px;
+  height: 475px;
+  @include box-shadow($insetShadow);
+  display: block;
+  position: absolute;
+  background-color: $nudeColorDarker;
+  @include transform(translateX(16px));
+  @include transition (1s ease-in-out);
 }
 
 .gallery__projects--each {
-  width: 280px;
-  margin: 20px;
+  content:'';
+  width: 375px;
+  height: 495px;
+  margin: 40px;
+  @include box-shadow($insetShadow);
+  @include transition (1s ease-in-out);
+  background-color: $nudeColorDarker;
+}
+
+.gallery__projects--each::after {
+  content: 'click';
+  width: 301px;
+  height: 394px;
+  background-color: $opaqueBlack;
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+  @include transform(translate(33px, -394px));
+  z-index: 1;
+  text-align: center;
+  line-height: 394px;
+  font-size: 4em;
+  letter-spacing: 10px;
+  text-shadow: $textShadow;
+  @include transition (0.7s ease-in-out);
+}
+
+.gallery__projects--title {
+  letter-spacing: 8px;
+  font-size: 0.9em;
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 70px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 20px 20px 0 0;
+  text-align: center;
+  @include box-shadow($mainShadow);
+  width: 376px;
+  @include transform(translate(-34px, -15px));
+  height: 70px;
+  @include transition (0.7s ease-in-out);
+  background-color: $nudeColorDarker;
+}
+
+.gallery__projects--image {
+  width: 300px;
+  height: auto;
+  @include transform(translateY(-14px));
+}
+
+.gallery__projects--description {
+  font-size: 0.8em;
+  padding: 13px;
+  @include transform(translateY(-16px));
+  letter-spacing: 2px;
+  @include absolute_position_center;
 
 }
+
+.gallery__projects--link {
+  text-decoration: none;
+  color: $titleColor;
+  @include transition (1s ease-in-out);
+  &:hover .gallery__projects--box {
+    @include box-shadow($mainShadow);
+  }
+  &:hover .gallery__projects--each {
+    @include box-shadow($mainShadow);
+    background-color: $nudeColorDarker;
+  }
+  &:hover .gallery__projects--each::before {
+    @include box-shadow($mainShadow);
+    background-color: $nudeColorDarker;
+  }
+  &:hover .gallery__projects--title {
+    background-color: $opaqueBlack;
+    letter-spacing: 10px;
+    font-size: 0.9em;
+  }
+  &:hover .gallery__projects--each::after {
+    opacity: 1;
+    letter-spacing: 20px;
+  }
+}
+
+
+
 
 //====================================================================
 //  B A C K G R O U N D   T R A N S I T I O N
@@ -55,8 +165,8 @@
 .gallery__transition {
   position: absolute;
   width: 100%;
-  height:200px;
+  height:250px;
   background-color: $nudeTwoColor;
   z-index: 2;
-  @include transform(skewY(-7deg) translateY(100px));
+  @include transform(skewY(-7deg) translateY(110px));
 }

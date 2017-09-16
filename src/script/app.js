@@ -239,6 +239,7 @@ var controller = new ScrollMagic.Controller();
 var pinHouse = new ScrollMagic.Scene({
   triggerElement: header,
   triggerHook: 0,
+  duration: 1600
   })
   .setPin(headerHouse)
   .addTo(controller);
@@ -254,10 +255,10 @@ headerTl
   .from($headerHouseMain, 0.6, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseRoof, 0.5, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseFrame, 0.5, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
-  .set($headerHouseWindowLeft, {rotationY: 0, transformOrigin:"0% 99%", opacity: 0, zIndex:2})
-  .set($headerHouseWindowRight, {rotationY: 0, transformOrigin:"0% 99%", opacity: 0, zIndex:2})
-  .from($headerHouseWindowLeft, 0.3, {rotationY: -180, transformOrigin:"0% 99%", opacity: 0, zIndex:2, ease:Bounce.easeOut})
-  .from($headerHouseWindowRight, 0.3, {rotationY: -180, transformOrigin:"99% 0%", opacity: 0, zIndex:2, ease:Bounce.easeOut})
+  .set($headerHouseWindowLeft, {rotationY: -180, transformOrigin:"0% 99%", opacity: 0, zIndex:2})
+  .set($headerHouseWindowRight, {rotationY: -180, transformOrigin:"0% 99%", opacity: 0, zIndex:2})
+  .from($headerHouseWindowLeft, 0.3, {rotationY: 180, transformOrigin:"0% 99%", opacity: 0, zIndex:2, ease:Bounce.easeOut})
+  .from($headerHouseWindowRight, 0.3, {rotationY: 180, transformOrigin:"99% 0%", opacity: 0, zIndex:2, ease:Bounce.easeOut})
   .from($ladder, 0.7, {x: -15, opacity: 0, ease:Linear.easeNone})
   .to($headerTitle, 1.7, {text: "BRONTË", scale:1.3}, '-=3')
   .to($headerTitle, 2, {text: "FRONTEND DEVELOPER", scale:1}, '-=0.25');
@@ -313,6 +314,7 @@ galaxyTl
 var sceneGalaxyZoom = new ScrollMagic.Scene({
   triggerElement: aboutContainer,
   offset: 100,
+  duration: 800
 })
 .setTween(galaxyTl)
 .addTo(controller);
@@ -325,8 +327,8 @@ var aboutTl = new TimelineMax();
 aboutTl
 .from($aboutLevel, 0.2, {y: -15, opacity:0, ease:Linear.easeNone})
 .add("picAppear")
-.to($headerHouseWindowLeft, 0.6, {rotationY: -180, transformOrigin:"0% 99%", zIndex: 2, ease:Linear.easeNone}, "picAppear")
-.to($headerHouseWindowRight, 0.6, {rotationY: -180, transformOrigin:"99% 0%", zIndex: 2, ease:Linear.easeNone})
+.to($headerHouseWindowLeft, 1, {rotationY: -180, transformOrigin:"0% 99%", zIndex: 2, ease:Linear.easeNone}, "picAppear")
+.to($headerHouseWindowRight, 1, {rotationY: -180, transformOrigin:"99% 0%", zIndex: 2, ease:Linear.easeNone})
 .from($aboutPic, 0.9, {scale: 0, opacity:0, ease:Linear.easeNone}, "picAppear")
 .to($aboutTitleFive, 1, {scale: 4.6, y: "-=166", ease:Linear.easeNone}, "+=1")
 .to($aboutTitleFour, 1, {scale: 3.9, y: "-=126", ease:Linear.easeNone})
@@ -434,14 +436,14 @@ $.getJSON("/src/script/json/skills.json", function(jsonSkill) {
 var galleryTl = new TimelineMax();
 
 galleryTl
-.from($galleryTitle, 1, {x: "-=45", opacity: 0, ease:Linear.easeNone})
-.from($galleryNumber, 1, {x: "+=45", opacity: 0, ease:Linear.easeNone})
+.from($galleryTitle, 2, {x: "-=45", opacity: 0, ease:Linear.easeNone})
+.from($galleryNumber, 2, {x: "+=45", opacity: 0, ease:Linear.easeNone})
 ;
 
 var windowGalaxyScroll = new ScrollMagic.Scene({
   triggerElement: galleryContainer,
-  offset: -170,
-  duration: 180
+  offset: -250,
+  duration: 200
 })
 .setTween(galleryTl)
 .addIndicators({name:'gallery title'}) //indicate trigger meeting point
@@ -460,12 +462,12 @@ $.getJSON("/src/script/json/projects.json", function(jsonProject) {
     var projectLink = jsonProject[i].projectLink;
 
     $galleryProjects.append(
-      '<li class = "gallery__projects--each"><h4 class = "gallery__projects--title">'
-       + projectTitle + '</h4><img class = "gallery__projects--image" src = '
+      '<a class="gallery__projects--link" href = ' + projectLink
+       + '><li class = "gallery__projects--each"><div class = "gallery__projects--box"><div class = "gallery__projects--title">'
+       + projectTitle + '</div><img class = "gallery__projects--image" src = '
        + projectImageSmall + ' srcset = ' + projectImageMedium + ' 650w, '
-       + projectImageLarge + ' 1000w" alt = "projects"><span class = "gallery__projects--description">'
-       + projectDescription + '</span><div class="gallery__projects--link"><a href = ' + projectLink
-       + '>GO</a></div></li>')
+       + projectImageLarge + ' 1000w" alt = "projects"><div class = "gallery__projects--description">'
+       + projectDescription + '</div></div></li></a>')
   }
 })
 .fail(errorHandle); //error handle
