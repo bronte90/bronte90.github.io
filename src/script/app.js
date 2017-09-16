@@ -92,18 +92,23 @@
 //***----------  G A L L E R Y  ------------***//
 
   //========  J Q U E R Y  ==========//
-var $galleryNumber = $('.gallery__level');
-var $galleryTitle = $('.gallery__title');
-var $galleryProjects = $('.gallery__projects');
-var $galleryEachProject = $('.gallery__projects--each');
+  var $galleryNumber = $('.gallery__level');
+  var $galleryTitle = $('.gallery__title');
+  var $galleryProjects = $('.gallery__projects');
+  var $galleryEachProject = $('.gallery__projects--each');
 
 
-  //========  S T R I N G  ==========// up
-var galleryContainer = '.gallery';
-var galleryNumber = '.gallery__level';
-var galleryTitle = '.gallery__title';
-var galleryProjects ='.gallery__projects';
-var galleryEachProject ='.gallery__projects--each';
+  //========  S T R I N G  ==========//
+  var galleryContainer = '.gallery';
+  var galleryNumber = '.gallery__level';
+  var galleryTitle = '.gallery__title';
+  var galleryProjects ='.gallery__projects';
+  var galleryEachProject ='.gallery__projects--each';
+
+
+  //========  J A V A S C R I P T  ==========// up
+  var filterInput = document.getElementById('gallery__search');
+
 
 
 //***----------  C O N T A C T  ------------***//
@@ -432,7 +437,6 @@ $.getJSON("/src/script/json/skills.json", function(jsonSkill) {
 
 // ----------------  T I T L E
 //----------------------------------------------------------------------
-// comeback
 var galleryTl = new TimelineMax();
 
 galleryTl
@@ -448,6 +452,31 @@ var windowGalaxyScroll = new ScrollMagic.Scene({
 .setTween(galleryTl)
 .addIndicators({name:'gallery title'}) //indicate trigger meeting point
 .addTo(controller);
+
+
+// ----------------  E A C H   P R O J E C T come
+//----------------------------------------------------------------------
+filterInput.addEventListener('keyup', filterProjects);
+
+function filterProjects() {
+  // get value when and turn it into uppercase when typing in search box
+  var filterValue = document.getElementById('gallery__search').value.toUpperCase();
+
+  // get ul names
+  var namesContainer = document.getElementsByClassName('gallery__projects');
+  var names = document.getElementsByClassName('gallery__projects--each');
+
+  //loop to find match for value vs project displayed
+  for(var i = 0; i < names.length; i++) {
+    var a = names[i].getElementsByClassName('gallery__projects--title')[0];
+    if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1){
+      names[i].style.display = '';
+    } else {
+      names[i].style.display = 'none';
+    }
+  }
+}
+
 
 // ----------------  A P P E N D (json file)
 //----------------------------------------------------------------------
