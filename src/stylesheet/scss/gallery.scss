@@ -3,26 +3,50 @@
 //=====================================================================
 .gallery {
   margin: 0;
-  height: $containerHeight;
   background-color: $nudeColor;
   width: 100%;
   position: relative;
+  padding-bottom: 260px;
 }
 
 //=====================================================================
 //  T E X T S  (title etc)
 //=====================================================================
 .gallery__title {
-  @include title_fonts;
   color: $titleColor;
+  font-family: $titleFont;
+  font-size: 4.5em;
   opacity: 0.8;
-  @include transform(translate(12px, 590px));
+  @include absolute_position_center;
+  width: 400px;
+  @include transform(translate(12px, -240px) skewY(5deg));
+  text-shadow: $textShadow;
 }
 
 .gallery__level {
-  @include level_fonts;
-  color: $opaqueBlue;
-  @include transform(translate(-10px, 570px));
+  @include absolute_position_center;
+  letter-spacing: 3.5px;
+  width: 200px;
+  text-shadow: $textShadow;
+  font-size: 7em;
+  color: $brownColor;
+  @include transform(translate(210px, -250px));
+}
+
+.gallery__projects {
+  list-style: none;
+  font-family: $titleFont;
+  color: $titleColor;
+  font-size: 1em;
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.gallery__projects--each {
+  width: 280px;
+  margin: 20px;
+
 }
 
 //====================================================================
@@ -34,14 +58,5 @@
   height:200px;
   background-color: $nudeTwoColor;
   z-index: 2;
-  @include transform(skewY(-7deg) translateY(670px));
-}
-
-.gallery__transition-two {
-  position: absolute;
-  width: 150%;
-  height:230px;
-  background-color: $nudeThreeColor;
-  opacity: 0.5;
-  @include transform(skewY(7deg) translateY(690px));
+  @include transform(skewY(-7deg) translateY(100px));
 }

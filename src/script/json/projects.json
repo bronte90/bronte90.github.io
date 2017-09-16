@@ -1,5 +1,3 @@
-/* PROJECTS */
-
 [
   {
     "projectTitle": "React Redux Portfolio",
@@ -9,7 +7,7 @@
       "projectImageMedium": "../dist/images/portfolio-medium.png",
       "projectImageSmall": "../dist/images/portfolio-small.png"
     },
-    "projectLink": "https://brontebronte.github.io/"
+    "projectLink": "https://brontebronte.github.io/portfolio"
   },
   {
     "projectTitle": "Google Map API",

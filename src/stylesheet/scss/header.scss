@@ -86,7 +86,7 @@
 .header__level {
   @include level_fonts;
   @include transform(translate(8px, 60px));
-  color: $superYellowColor;
+  color: $brownColor;
 }
 
 .header__title--name {
@@ -99,6 +99,7 @@
   width: 100%;
   text-align: center;
   padding: 20px;
+  z-index: 1;
 }
 
 //====================================================================

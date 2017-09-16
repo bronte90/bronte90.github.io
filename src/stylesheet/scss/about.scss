@@ -5,7 +5,7 @@ background-position: top center;
 background-attachment: fixed;
 background-repeat: repeat;
 margin: 0;
-height: 2000px;
+height: 2200px;
 width: 100%;
 background-color: $opaqueBlack;
 background-blend-mode: hard-light;
@@ -53,34 +53,31 @@ background-blend-mode: hard-light;
 .about__window-box {
   @include absolute_position_center;
   width: 250px;
-  @include transform(translateY(-45px));
+  @include transform(translate(-5px, -45px));
 }
 
 .about__window-box--photo {
   width: 95px;
   z-index: 0;
   @include absolute_position_center;
-  @include transform(translate(5px, 380px));
+  @include transform(translate(5px, 390px));
   @include filter(brightness(0.7) contrast(130%));
 }
 
 
 .about__window-box--blinders {
-  width: 111px;
-  height: 150px;
+  width: 95px;
+  height: 147px;
   @include absolute_position_center;
-  @include transform(translateY(330px));
+  @include transform(translate(-4px, 332.9px));
   list-style: none;
-  font-family: $titleFont;
-  color: $blueColor;
-  font-size: 1em;
 }
 
 .about__window-box--blinders-each {
-  background-color: $opaqueBlack;
-  width: 111px;
-  height: 26.67px;
-  @include transform(translateX(-35px) rotateX(65deg));
+  background-color: $greyColor;
+  width: 103px;
+  height: 26px;
+  @include transform(translateX(-34px) rotateX(95deg));
   @include transformOrigin(top);
 }
 
@@ -89,28 +86,48 @@ background-blend-mode: hard-light;
 //  P R O F I L E    D E S C R I P T I O N
 //====================================================================
 .about__profile {
+  height: 300px;
   @include about_subbox_main;
-  @include transform(translateY(990px));
-  @include about_subbox_size-one;
+  @include transform(skew(10deg) translate(-160px ,990px));
 }
 
 .about__profile::before {
-  @include about_subbox_right;
-  top: 0;
-  left: 40%;
-  @include about_subbox_size-one;
+  @include about_subbox_main-before;
+  @include transform(skew(25deg) rotate(15deg) translate(-18px, 5px));
+  content: '';
+  height: 290px;
 }
 
-.about__profile::after {
-  @include about_subbox_left;
-  top: 0;
-  left: -70%;
-  @include about_subbox_size-one;
+.about__profile span {
+  color:$titleColor;
+  font-family: $titleFont;
+  font-size: 0.8em;
+  @include transform(skew(-10deg));
+  display: block;
+  padding-top: 70px;
+  padding-left: 50px;
+  padding-right: 20px;
+  line-height: 30px;
+  letter-spacing: 3px;
+}
+
+.about__skills {
+  height: 380px;
+  padding: 10px;
+  @include about_subbox_main;
+  @include transform(skew(10deg) translate(-160px ,1050px));
+}
+
+.about__skills::before {
+  @include about_subbox_main-before;
+  @include transform(skew(-35deg) rotate(-15deg) translate(-18px, 25px));
+  content: '';
+  height: 290px;
 }
 
 .about__sub-one {
   @include about_subbox_number;
-  @include transform(translate(-140px, 920px));
+  @include transform(translate(-120px, 920px));
 }
 
 .about__sub-two {
@@ -118,27 +135,11 @@ background-blend-mode: hard-light;
   @include transform(translate(140px, 980px));
 }
 
-.about__skills {
-  @include about_subbox_main;
-  @include transform(translateY(1050px));
-  @include about_subbox_size-two;
+.skillSets {
+  width:70px;
+  padding: 12px;
+  @include transform(skew(-10deg));
 }
-
-.about__skills::before {
-  @include about_subbox_right;
-  top: 0;
-  left: 40%;
-  @include about_subbox_size-two;
-}
-
-.about__skills::after {
-  @include about_subbox_left;
-  top: 0;
-  left: -70%;
-  @include about_subbox_size-two;
-}
-
-
 
 
 //====================================================================
@@ -149,5 +150,5 @@ background-blend-mode: hard-light;
   width: 100%;
   height:200px;
   background-color: $nudeColor;
-  @include transform(skewY(5deg) translateY(1600px));
+  @include transform(skewY(5deg) translateY(1400px));
 }

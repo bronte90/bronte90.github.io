@@ -49,6 +49,7 @@
   var $headerHouseRoof = $('.header__house--roof');
   var $headerLogo = $('.header__logo');
   var $headerHouse = $('.header__house');
+  var $ladder = $('.background-ladder');
 
   //========  S T R I N G  ==========//
   var header = '.header';
@@ -70,6 +71,10 @@
   var $aboutTitleFive = $('.about__title-five');
   var $aboutBlinders = $('.about__window-box--blinders-each');
   var $aboutBlindersBox = $('.about__window-box--blinders');
+  var $aboutSkills  = $('.about__skills');
+  var $aboutProfile = $('.about__profile');
+  var $aboutSkillsNumber = $('.about__sub-two');
+  var $aboutProfileNumber = $('.about__sub-one');
 
 
   //========  S T R I N G  ==========//
@@ -77,15 +82,28 @@
   var aboutLevel = '.about__level';
   var aboutTitle = '.about__title';
   var aboutPic = '.about__window-box';
+  var aboutSkills = '.about__skills';
+  var aboutProfile = '.about__profile';
+  var aboutSkillsNumber = '.about__sub-one';
+  var aboutProfileNumber = '.about__sub-two';
+
 
 
 //***----------  G A L L E R Y  ------------***//
 
   //========  J Q U E R Y  ==========//
+var $galleryNumber = $('.gallery__level');
+var $galleryTitle = $('.gallery__title');
+var $galleryProjects = $('.gallery__projects');
+var $galleryEachProject = $('.gallery__projects--each');
 
 
-  //========  S T R I N G  ==========//
-
+  //========  S T R I N G  ==========// up
+var galleryContainer = '.gallery';
+var galleryNumber = '.gallery__level';
+var galleryTitle = '.gallery__title';
+var galleryProjects ='.gallery__projects';
+var galleryEachProject ='.gallery__projects--each';
 
 
 //***----------  C O N T A C T  ------------***//
@@ -102,6 +120,33 @@
   var contactMoon = '.contact__moon';
   var contactBox = '.contact__box';
 
+
+//=========================================================================
+//       E R R O R
+//=========================================================================
+// Error function for Google Map API
+function errorMsg() {
+    window.alert("Error: Failed to retrieve information.");
+}
+
+// Error handle for all other api and json files
+function errorHandle(jqXHR, exception) {
+    if (jqXHR.status === 0) {
+        window.alert('Not connect.\n Verify Network.');
+    } else if (jqXHR.status == 404) {
+        window.alert('Requested API not found. [404]');
+    } else if (jqXHR.status == 500) {
+        window.alert('Internal Server Error [500].');
+    } else if (exception === 'parsererror') {
+        window.alert('Requested JSON parse failed.');
+    } else if (exception === 'timeout') {
+        window.alert('Time out error.');
+    } else if (exception === 'abort') {
+        window.alert('Ajax request aborted.');
+    } else {
+        window.alert('Uncaught Error.\n' + jqXHR.responseText);
+    }
+}
 
 
 //===============================================================
@@ -196,7 +241,6 @@ var pinHouse = new ScrollMagic.Scene({
   triggerHook: 0,
   })
   .setPin(headerHouse)
-  .addIndicators({name: '1 house (duration: 800)'}) // add indicators (requires plugin)
   .addTo(controller);
 
 
@@ -206,7 +250,7 @@ var titleText = "boat";
 var titleTextStrike = titleText.strike();
 
 headerTl
-  .from($headerLevel, 0.7, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
+  .from($headerLevel, 0.7, {x: -25, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseMain, 0.6, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseRoof, 0.5, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseFrame, 0.5, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
@@ -214,6 +258,7 @@ headerTl
   .set($headerHouseWindowRight, {rotationY: 0, transformOrigin:"0% 99%", opacity: 0, zIndex:2})
   .from($headerHouseWindowLeft, 0.3, {rotationY: -180, transformOrigin:"0% 99%", opacity: 0, zIndex:2, ease:Bounce.easeOut})
   .from($headerHouseWindowRight, 0.3, {rotationY: -180, transformOrigin:"99% 0%", opacity: 0, zIndex:2, ease:Bounce.easeOut})
+  .from($ladder, 0.7, {x: -15, opacity: 0, ease:Linear.easeNone})
   .to($headerTitle, 1.7, {text: "BRONTË", scale:1.3}, '-=3')
   .to($headerTitle, 2, {text: "FRONTEND DEVELOPER", scale:1}, '-=0.25');
 
@@ -234,7 +279,6 @@ var headerTitle = new ScrollMagic.Scene({
   reverse: true
 })
 .setTween(homeTl)
-.addIndicators({name: '3 Title'})
 .addTo(controller);
 
 
@@ -251,7 +295,6 @@ var headerAbout = new ScrollMagic.Scene({
   duration: 800
 })
 .setTween(homeAboutTl)
-.addIndicators({name: '2 house'})
 .addTo(controller);
 
 
@@ -264,14 +307,14 @@ var galaxyTl = new TimelineMax();
 
 galaxyTl
   .set($aboutDiv,{backgroundSize:'100% 100%'})
-  .to($aboutDiv, 0.2, {backgroundSize: '+=45% +=45%', autoRound:false, ease: Power0.easeNone});
+  .to($aboutDiv, 0.1, {backgroundSize: '+=45% +=45%', autoRound:false, ease:Circ.easeOut});
 
 
 var sceneGalaxyZoom = new ScrollMagic.Scene({
   triggerElement: aboutContainer,
+  offset: 100,
 })
 .setTween(galaxyTl)
-.addIndicators({name:'2 - galaxy'}) //indicate trigger meeting point
 .addTo(controller);
 
 //----------  H o u s e   i n   G a l a x y  -----------//
@@ -298,7 +341,6 @@ var sceneGalaxyScroll = new ScrollMagic.Scene({
   duration: 430
 })
 .setTween(aboutTl)
-.addIndicators({name:'4 galaxy'}) //indicate trigger meeting point
 .addTo(controller);
 
 //--- SCENE 2: Window fram zooms, profile and pic description appears
@@ -307,7 +349,7 @@ var windowTl = new TimelineMax();
 windowTl
 .add("zoom")
 .to($headerHouse, 0.5, {scale: 1.6, y: "-=150", opacity: 0, ease:Linear.easeNone}, "zoom")
-.to($aboutPic, 0.5, {scale: 1.6, y: "-=310", opacity: 0, ease:Linear.easeNone}, "zoom")
+.to($aboutPic, 0.5, {scale: 1.6, y: "-=303", opacity: 0, ease:Linear.easeNone}, "zoom")
 ;
 
 var windowGalaxyScroll = new ScrollMagic.Scene({
@@ -316,7 +358,6 @@ var windowGalaxyScroll = new ScrollMagic.Scene({
   duration: 250
 })
 .setTween(windowTl)
-.addIndicators({name:'5 galaxy'}) //indicate trigger meeting point
 .addTo(controller);
 
 
@@ -324,7 +365,7 @@ var windowGalaxyScroll = new ScrollMagic.Scene({
 
 $aboutBlinders.each(function(){
   //build a tween
-  var blinderTween = TweenMax.to($(this), 1, {rotationX: -11, ease:Linear.easeNone});
+  var blinderTween = TweenMax.to($(this), 1, {rotationX: -11, ease:Linear.easeNone, zIndex: -1});
 
   //build scene
   var blindersScene = new ScrollMagic.Scene({
@@ -333,11 +374,27 @@ $aboutBlinders.each(function(){
     duration: 140
   })
   .setTween(blinderTween)
-  .addIndicators({name:'blinds'}) // add indicators (requires plugin)
   .addTo(controller)
   ;
 });
 
+//----------  A b o u t   D e s c r i p t i o n  -----------//
+var descriptionTl = new TimelineMax();
+
+descriptionTl
+.from($aboutProfileNumber, 1, {x: "-=45", opacity: 0, ease:Linear.easeNone})
+.from($aboutProfile, 2, {x: "+=45", opacity: 0, ease:Linear.easeNone}, "+=0.5")
+.from($aboutSkillsNumber, 1, {x: "+=45", opacity: 0, ease:Linear.easeNone}, "+=0.5")
+.from($aboutSkills, 2, {x: "-=45", opacity: 0, ease:Linear.easeNone}, "+=0.5")
+;
+
+var windowGalaxyScroll = new ScrollMagic.Scene({
+  triggerElement: aboutProfile,
+  offset: -80,
+  duration: 500
+})
+.setTween(descriptionTl)
+.addTo(controller);
 
 
 // ----------------  P I N S  I N  G A L A X Y
@@ -348,15 +405,70 @@ var pinProfile = new ScrollMagic.Scene({
   offset: 350
   })
   .setPin(aboutPic)
-  .addIndicators({name: 'pin profile'}) // add indicators (requires plugin)
   .addTo(controller);
 
+
+// ----------------  A P P E N D (json file)
+//----------------------------------------------------------------------
+  //----------  A p p e n d   S k i l l s  -----------//
+$.getJSON("/src/script/json/skills.json", function(jsonSkill) {
+  for(var i = 0; i < jsonSkill.length; i++) {
+      var skillLarge = jsonSkill[i].skillImage.skillImageLarge;
+      var skillMed = jsonSkill[i].skillImage.skillImageMedium;
+      var skillSmall = jsonSkill[i].skillImage.skillImageSmall;
+
+      //Append them to div
+      $aboutSkills.append('<img class="skillSets" src=' + skillSmall + ' srcset="' + skillMed + ' 650w, ' + skillLarge + ' 1000w" alt="skillset logos">');
+  }
+})
+.fail(errorHandle); //error handle
 
 
 //==========================================================================
 //         G A L L E R Y
 //==========================================================================
 
+// ----------------  T I T L E
+//----------------------------------------------------------------------
+// comeback
+var galleryTl = new TimelineMax();
+
+galleryTl
+.from($galleryTitle, 1, {x: "-=45", opacity: 0, ease:Linear.easeNone})
+.from($galleryNumber, 1, {x: "+=45", opacity: 0, ease:Linear.easeNone})
+;
+
+var windowGalaxyScroll = new ScrollMagic.Scene({
+  triggerElement: galleryContainer,
+  offset: -170,
+  duration: 180
+})
+.setTween(galleryTl)
+.addIndicators({name:'gallery title'}) //indicate trigger meeting point
+.addTo(controller);
+
+// ----------------  A P P E N D (json file)
+//----------------------------------------------------------------------
+  //----------  A p p e n d   P r o j e c t s  -----------//
+$.getJSON("/src/script/json/projects.json", function(jsonProject) {
+  for(var i = 0; i <jsonProject.length; i++) {
+    var projectTitle = jsonProject[i].projectTitle;
+    var projectDescription = jsonProject[i].projectDescription;
+    var projectImageSmall = jsonProject[i].projectImage.projectImageSmall;
+    var projectImageMedium = jsonProject[i].projectImage.projectImageMedium;
+    var projectImageLarge = jsonProject[i].projectImage.projectImageLarge;
+    var projectLink = jsonProject[i].projectLink;
+
+    $galleryProjects.append(
+      '<li class = "gallery__projects--each"><h4 class = "gallery__projects--title">'
+       + projectTitle + '</h4><img class = "gallery__projects--image" src = '
+       + projectImageSmall + ' srcset = ' + projectImageMedium + ' 650w, '
+       + projectImageLarge + ' 1000w" alt = "projects"><span class = "gallery__projects--description">'
+       + projectDescription + '</span><div class="gallery__projects--link"><a href = ' + projectLink
+       + '>GO</a></div></li>')
+  }
+})
+.fail(errorHandle); //error handle
 
 
 //===========================================================================
@@ -387,7 +499,6 @@ var scene = new ScrollMagic.Scene({
   tweenChanges: true,
   })
 .setTween(contactTween)
-.addIndicators({name:'contact'}) // add indicators (requires plugin)
 .addTo(controller);
 
 
@@ -409,7 +520,6 @@ $contactPapereach.each(function(){
     offset: -90
   })
   .setTween(tween)
-  .addIndicators({name:'paper'}) // add indicators (requires plugin)
   .addTo(controller)
   ;
 });
@@ -423,10 +533,9 @@ moonTl
 .from($contactMoon, 1, {y: -30, opacity: 0, ease:Bounce.easeOut})
 ;
 
-var sceneGalaxyZoom = new ScrollMagic.Scene({
+var sceneMoonDrop = new ScrollMagic.Scene({
   triggerElement: contactBox,
   offset: 160
 })
 .setTween(moonTl)
-.addIndicators({name:'moon'}) //indicate trigger meeting point
 .addTo(controller);
