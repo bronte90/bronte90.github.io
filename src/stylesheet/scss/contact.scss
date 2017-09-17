@@ -3,7 +3,7 @@
 //=====================================================================
 .contact {
   position: relative;
-  background-color: $nudeTwoColor;
+  background-color: $nudeColorDarker;
   height: 830px;
   width: 100%;
 }
@@ -11,7 +11,7 @@
 .contact__box {
   @include absolute_position_center;
   width: 350px;
-  background-color: $nudeThreeColor;
+  background-color: $mauveDark;
   border-width: 0.5px;
   border-style: solid;
   border-color: $greyColor;
@@ -44,12 +44,12 @@
 }
 
 //=====================================================================
-//  Y E L L O W   N U M B E R
+//  N U M B E R
 //=====================================================================
 .contact__level {
   @include level_fonts;
   @include transform(translate(247px, 240px));
-  color: $nudeColorDarker;
+  color: $nudeTwoColor;
 }
 
 //=====================================================================
@@ -64,7 +64,7 @@
   text-shadow: $textShadowTwo;
   font-size: 0.8em;
   letter-spacing: 4px;
-  background-color: $nudeTwoColor;
+  background-color: $nudeColorDarker;
   border-width: 0.5px;
   border-style: solid;
   border-radius: 5px;

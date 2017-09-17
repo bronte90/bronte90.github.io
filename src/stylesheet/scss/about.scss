@@ -17,7 +17,7 @@ background-blend-mode: hard-light;
 //====================================================================
 .about__level {
   @include level_fonts;
-  color: $nudeColor;
+  color: $nudeColorDarker;
   @include transform(translate(-10px, 180px));
 }
 

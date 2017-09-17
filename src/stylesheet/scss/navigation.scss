@@ -17,7 +17,7 @@
   width: 0;
   border-style: solid;
   border-width: 0 60px 55px 60px;
-  border-color: transparent transparent $brownColor transparent;
+  border-color: transparent transparent $mauve transparent;
   @include filter($svgShadow);
   @include transition (0.2s ease-in-out);
   position: absolute;
@@ -60,7 +60,7 @@
 }
 
 .nav__button.notActive {
-  border-color: transparent transparent $blueColor transparent;
+  border-color: transparent transparent $nudeThreeColor transparent;
 }
 
 .nav__button.active .nav__button--icon-open {

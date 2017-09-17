@@ -174,7 +174,7 @@
 
 @mixin about_title {
   @include title_fonts;
-  color: $nudeColor;
+  color: $nudeColorDarker;
   letter-spacing: 4.2px;
   @include transform(translateY(500px) scale(1.5));
   text-align: center;
@@ -186,7 +186,7 @@
 //---------------------------------------------------------------
 
 @mixin about_subbox_main {
-  background-color: $opaqueBlack;
+  background-color: $mauveDark;
   @include relative_position_center;
   @include filter($svgShadowTwo);
   width: 310px;
@@ -196,8 +196,8 @@
   @include absolute_position_center;
   @include filter($svgShadowTwo);
   width: 360px;
-  border-color: $nudeThreeColor;
-  opacity: 0.8;
+  border-color: $nudeColorDarker;
+  opacity: 0.7;
   border-style: solid;
   border-width: 2px;
 }
@@ -220,4 +220,20 @@
   z-index: 1;
   width: 200px;
   opacity: 0.7;
+}
+
+//-----------------  A N I M A T I O N
+//---------------------------------------------------------------
+
+@include keyframes(loading) {
+  from {
+    @include transform(rotate(-25deg));
+  }
+  to {
+    @include transform(rotate(25deg));
+  }
+}
+
+@mixin loading {
+  @include animate(loading, 1.6s, infinite, alternate, forwards);
 }

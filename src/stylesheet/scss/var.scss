@@ -26,20 +26,18 @@
 //----------------  C O L O R
 //--------------------------------------------------------------
 $titleColor: #f6f6f6;
+$tintedColor: #b7a3a9;
 $opaqueBlack: rgba(0, 0, 0, 0.77);
 $opaqueNude: rgba(246,246,246, 0.4);
-$opaqueBlue: rgba(41,35,229, 0.5);
 $nudeColor:#a88461;
 $nudeColorDarker: #634345;
 $nudeTwoColor: #9b7c7f;
 $nudeThreeColor: #7f5659;
-$seaColor: #809e8d;
-$peachColor: #ce806c;
-$blueColor:#6e869e;
 $brownTwoColor: #7c6248;
 $greyColor: #D3D3D3;
-$redColor: #a43026;
-$brownColor: #332C2C;
+$redColor: #621c16;
+$mauve: #38232a;
+$mauveDark: rgba(25,15,18,0.8);
 
 
 
@@ -53,3 +51,8 @@ $textShadowTwo: 2px 2px 0px rgba(0,0,0,0.2);
     //  ------------  S V G  ------------  //
     $svgShadow: drop-shadow(10px 10px 15px black);
     $svgShadowTwo: drop-shadow(6px 6px 0px rgba(0,0,0,0.2));
+
+
+//--------------  S C R E E N   S I Z E
+//--------------------------------------------------------------------------
+$smallScreen: 530px;

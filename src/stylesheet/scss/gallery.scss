@@ -71,7 +71,7 @@
   @include box-shadow($insetShadow);
   display: block;
   position: relative;
-  background-color: $nudeColorDarker;
+  background-color: $mauve;
   @include transform(translateX(33px));
   @include transition (1s ease-in-out);
 }
@@ -131,7 +131,7 @@
   @include transform(translate(-34px, -15px));
   height: 70px;
   @include transition (0.7s ease-in-out);
-  background-color: $nudeColorDarker;
+  background-color: $mauve;
 }
 
 .gallery__projects--image {
@@ -158,11 +158,11 @@
   }
   &:hover .gallery__projects--each {
     @include box-shadow($mainShadow);
-    background-color: $nudeColorDarker;
+    background-color: $mauve;
   }
   &:hover .gallery__projects--each::before {
     @include box-shadow($mainShadow);
-    background-color: $nudeColorDarker;
+    background-color: $mauve;
   }
   &:hover .gallery__projects--title {
     background-color: $opaqueBlack;
@@ -185,7 +185,7 @@
   position: absolute;
   width: 100%;
   height:250px;
-  background-color: $nudeTwoColor;
+  background-color: $nudeColorDarker;
   z-index: 2;
   @include transform(skewY(-7deg) translateY(110px));
 }

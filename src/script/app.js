@@ -14,6 +14,7 @@
   var $galleryDiv = $('.gallery');
   var $contactDiv = $('.contact');
   var $htmlBodyDiv = $('html, body');
+  var $loaderDiv = $('#loader');
 
 //***----------  N A V I G A T I O N  ------------***//
 
@@ -96,6 +97,7 @@
   var $galleryTitle = $('.gallery__title');
   var $galleryProjects = $('.gallery__projects');
   var $galleryEachProject = $('.gallery__projects--each');
+  var $galleryProjectLink = $('.gallery__projects--link');
 
 
   //========  S T R I N G  ==========//
@@ -155,7 +157,7 @@ function errorHandle(jqXHR, exception) {
 
 
 //===============================================================
-//         NAVIGATION
+//         N A V I G A T I O N
 //===============================================================
 
 //----------  M E N U   T O G G L E
@@ -236,11 +238,21 @@ $contact.click(function() {
 //----------   M A G I C   ----------------------//
 var controller = new ScrollMagic.Controller();
 
+// ///=========================================================================
+// //         L O A D E R
+// //=========================================================================
+// after page is fully loaded, loader fades out (opacity zero)
+$(window).on('load', function(){
+  $('#loader').fadeOut();
+});
+
+
 ///=========================================================================
 //         H E A D E R
 //=========================================================================
 
 //----------  H o u s e   O n   S c r o l l  ------------//
+// parallax scrolling, only page moves, but illusion house is moving (up to mid of about section)
 var pinHouse = new ScrollMagic.Scene({
   triggerElement: header,
   triggerHook: 0,
@@ -251,19 +263,18 @@ var pinHouse = new ScrollMagic.Scene({
 
 
 //------------  H o u s e   O n   L o a d  --------------//
+// animation for house when page is first loaded only (no repeat)
 var headerTl = new TimelineMax();
 var titleText = "boat";
 var titleTextStrike = titleText.strike();
 
 headerTl
-  .from($headerLevel, 0.7, {x: -25, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
+  .from($headerLevel, 0.7, {y: -25, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseMain, 0.6, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseRoof, 0.5, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
   .from($headerHouseFrame, 0.5, {y: -15, opacity: 0, ease:Elastic.easeOut.config(1, 0.3)})
-  .set($headerHouseWindowLeft, {rotationY: -180, transformOrigin:"0% 99%", opacity: 0, zIndex:2})
-  .set($headerHouseWindowRight, {rotationY: -180, transformOrigin:"0% 99%", opacity: 0, zIndex:2})
-  .from($headerHouseWindowLeft, 0.3, {rotationY: 180, transformOrigin:"0% 99%", opacity: 0, zIndex:2, ease:Bounce.easeOut})
-  .from($headerHouseWindowRight, 0.3, {rotationY: 180, transformOrigin:"99% 0%", opacity: 0, zIndex:2, ease:Bounce.easeOut})
+  .fromTo($headerHouseWindowLeft, 0.3, {rotationY: -180, transformOrigin:"0% 99%", opacity: 0, zIndex:2, ease:Bounce.easeOut}, {opacity: 1, rotationY: 0, transformOrigin:"0% 99%"})
+  .fromTo($headerHouseWindowRight, 0.3, {rotationY: -180, transformOrigin:"99% 0%", opacity: 0, zIndex:2, ease:Bounce.easeOut}, {opacity: 1, rotationY: 0, transformOrigin:"99% 0%"})
   .from($ladder, 0.7, {x: -15, opacity: 0, ease:Linear.easeNone})
   .to($headerTitle, 1.7, {text: "BRONTË", scale:1.3}, '-=3')
   .to($headerTitle, 2, {text: "FRONTEND DEVELOPER", scale:1}, '-=0.25');
@@ -273,7 +284,7 @@ headerTl
 var homeTl = new TimelineMax();
 
 homeTl
-  .to($headerLevel, 1, {opacity: 0, ease:Power2.easeOut})
+  .fromTo($headerLevel, 1, {opacity: 1, ease:Power2.easeOut}, {opacity: 0, ease:Power2.easeOut})
   .to($headerLogo, 2.3, {y: 460, ease:Linear.easeNone})
   .to($headerTitle, 1, {opacity: 0, scale:1.8, x:'+=10', y:'+=100', zIndex:0, ease:Power2.easeOut});
 
@@ -309,6 +320,7 @@ var headerAbout = new ScrollMagic.Scene({
 //========================================================================
 
 //----------  G a l a x y   B a c k g r o u n d  -----------//
+// background galaxy is zoomed as one scrolls
 var galaxyTl = new TimelineMax();
 
 galaxyTl
@@ -330,10 +342,10 @@ var sceneGalaxyZoom = new ScrollMagic.Scene({
 var aboutTl = new TimelineMax();
 
 aboutTl
-.from($aboutLevel, 0.2, {y: -15, opacity:0, ease:Linear.easeNone})
+.fromTo($aboutLevel, 0.6, {y: "-=15", opacity:0, ease:Linear.easeNone}, {y: "+=15", opacity:1, ease:Linear.easeNone})
 .add("picAppear")
-.to($headerHouseWindowLeft, 1, {rotationY: -180, transformOrigin:"0% 99%", zIndex: 2, ease:Linear.easeNone}, "picAppear")
-.to($headerHouseWindowRight, 1, {rotationY: -180, transformOrigin:"99% 0%", zIndex: 2, ease:Linear.easeNone})
+.fromTo($headerHouseWindowLeft, 1, {rotationY: 0, transformOrigin:"0% 99%", zIndex: 2, ease:Linear.easeNone}, {rotationY: -180, transformOrigin:"0% 99%", zIndex: 2, ease:Linear.easeNone}, "picAppear")
+.fromTo($headerHouseWindowRight, 1, {rotationY: 0, transformOrigin:"99% 0%", zIndex: 2, ease:Linear.easeNone}, {rotationY: -180, transformOrigin:"99% 0%", zIndex: 2, ease:Linear.easeNone})
 .from($aboutPic, 0.9, {scale: 0, opacity:0, ease:Linear.easeNone}, "picAppear")
 .to($aboutTitleFive, 1, {scale: 4.6, y: "-=166", ease:Linear.easeNone}, "+=1")
 .to($aboutTitleFour, 1, {scale: 3.9, y: "-=126", ease:Linear.easeNone})
@@ -368,7 +380,7 @@ var windowGalaxyScroll = new ScrollMagic.Scene({
 .addTo(controller);
 
 
-//--- SCENE 3: Loop to close blinds
+//--- SCENE 3: Loop to close "blinds"
 
 $aboutBlinders.each(function(){
   //build a tween
@@ -386,6 +398,7 @@ $aboutBlinders.each(function(){
 });
 
 //----------  A b o u t   D e s c r i p t i o n  -----------//
+// appears when reaching the trigger point only
 var descriptionTl = new TimelineMax();
 
 descriptionTl
@@ -418,6 +431,7 @@ var pinProfile = new ScrollMagic.Scene({
 // ----------------  A P P E N D (json file)
 //----------------------------------------------------------------------
   //----------  A p p e n d   S k i l l s  -----------//
+  // Logo files, adjusting srcset as well
 $.getJSON("/src/script/json/skills.json", function(jsonSkill) {
   for(var i = 0; i < jsonSkill.length; i++) {
       var skillLarge = jsonSkill[i].skillImage.skillImageLarge;
@@ -450,11 +464,10 @@ var windowGalaxyScroll = new ScrollMagic.Scene({
   duration: 200
 })
 .setTween(galleryTl)
-.addIndicators({name:'gallery title'}) //indicate trigger meeting point
 .addTo(controller);
 
 
-// ----------------  E A C H   P R O J E C T come
+// ----------------  S E A R C H   P R O J E C T
 //----------------------------------------------------------------------
 filterInput.addEventListener('keyup', filterProjects);
 
@@ -463,7 +476,6 @@ function filterProjects() {
   var filterValue = document.getElementById('gallery__search').value.toUpperCase();
 
   // get ul names
-  var namesContainer = document.getElementsByClassName('gallery__projects');
   var names = document.getElementsByClassName('gallery__projects--each');
 
   //loop to find match for value vs project displayed
@@ -481,6 +493,7 @@ function filterProjects() {
 // ----------------  A P P E N D (json file)
 //----------------------------------------------------------------------
   //----------  A p p e n d   P r o j e c t s  -----------//
+  // append projects (flex box), srcset included, when clicked leads to link, hover style included in css
 $.getJSON("/src/script/json/projects.json", function(jsonProject) {
   for(var i = 0; i <jsonProject.length; i++) {
     var projectTitle = jsonProject[i].projectTitle;
@@ -502,11 +515,30 @@ $.getJSON("/src/script/json/projects.json", function(jsonProject) {
 .fail(errorHandle); //error handle
 
 
+// ----------------   P R O J E C T  (animation)
+//----------------------------------------------------------------------
+$galleryProjects.each(function(){
+  //build a tween
+  var galleryTween = TweenMax.from($(this), 0.3, {opacity: 0, y:'-=20', ease:Linear.easeNone});
+
+  //build scene
+  var galeryScene = new ScrollMagic.Scene({
+    triggerElement: galleryTitle,
+    offset: 100,
+  })
+  .setTween(galleryTween)
+  .addTo(controller)
+  ;
+});
+
+
+
 //===========================================================================
 //         C O N T A C T
 //=========================================================================
 
 //----------  C O N T A C T   T I T L E  -----------//
+// "Draws" contact title as one scrolls
 function pathPrepare ($el) {
   var lineLength = $el[0].getTotalLength();
   $el.css("stroke-dasharray", lineLength);
@@ -521,7 +553,7 @@ pathPrepare($contactTitlePath);
 // build tween
 var contactTween = new TimelineMax()
   .add(TweenMax.to($contactTitlePath, 2, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
-  .add(TweenMax.to("path", 2.1, {stroke: "rgba(246,246,246, 0.4)", ease:Linear.easeNone}), 0);			// change color during the whole thing
+  .add(TweenMax.to("path", 2.1, {stroke: "#b7a3a9", ease:Linear.easeNone}), 0);			// change color during the whole thing
 
 // build scene
 var scene = new ScrollMagic.Scene({
@@ -542,13 +574,13 @@ var scene = new ScrollMagic.Scene({
 
 //loop through elements
 $contactPapereach.each(function(){
-  //build a tween
+  //paper folds down as one scrolls
   var tween = TweenMax.to($(this), 0.23, {margin: '+=20', x:'-=20', ease:Linear.easeNone});
 
   //build scene
   var paperScene = new ScrollMagic.Scene({
     triggerElement: this,
-    offset: -90
+    offset: -150
   })
   .setTween(tween)
   .addTo(controller)
@@ -557,6 +589,7 @@ $contactPapereach.each(function(){
 
 
 //----------  C O N T A C T   M O O N -----------//
+// moon drops after papers are folded
 var moonTl = new TimelineMax();
 
 moonTl
@@ -566,7 +599,8 @@ moonTl
 
 var sceneMoonDrop = new ScrollMagic.Scene({
   triggerElement: contactBox,
-  offset: 160
+  offset: 50
 })
 .setTween(moonTl)
+// .addIndicators({name: "hi"})
 .addTo(controller);

@@ -3,7 +3,7 @@
 //=====================================================================
 @import 'var';
 @import "mixin";
-@import "animation";
+@import "loader";
 @import "header";
 @import "navigation";
 @import "about";
@@ -20,16 +20,18 @@
     box-sizing: border-box;
 }
 
+html,
 body {
-    margin: 0;
+    margin: 0px;
+    padding:0px;
     overflow-x: hidden;
+    position: relative;
 }
 
 .background-ladder {
     background-image: url(../../dist/images/ladder.svg);
     height: 836px;
     width: 10px;
-    opacity: 0.6;
     @include absolute_position_center;
     @include transform(translate(-2px, -37px));
     @include filter($svgShadowTwo);
