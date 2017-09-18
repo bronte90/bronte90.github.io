@@ -21,6 +21,10 @@
   width: 400px;
   @include transform(translate(12px, -240px));
   text-shadow: $textShadow;
+  @include mQ($smallScreen) {
+    font-size: 3em;
+    @include transform(translate(26px, -200px));
+  }
 }
 
 .gallery__level {
@@ -31,6 +35,10 @@
   font-size: 7em;
   color: $nudeColor;
   @include transform(translate(210px, -250px));
+  @include mQ($smallScreen) {
+    font-size: 3.5em;
+    @include transform(translate(180px, -190px));
+  }
 }
 
 #gallery__search {
@@ -49,6 +57,11 @@
   &:focus {
     outline: none;
   }
+  @include mQ($smallScreen) {
+    width: 250px;
+    font-size: 1.5em;
+    padding: 5px;
+  }
 }
 
 .gallery__projects {
@@ -63,6 +76,9 @@
   justify-content: center;
   @include transition (1s ease-in-out);
   @include transform(translateY(69px));
+  @include mQ($smallScreen) {
+    @include transform(translateY(40px));
+  }
 }
 
 .gallery__projects--box {
@@ -74,6 +90,10 @@
   background-color: $mauve;
   @include transform(translateX(33px));
   @include transition (1s ease-in-out);
+  @include mQ($smallScreen) {
+    width: 220px;
+    height: 340px;
+  }
 }
 
 .gallery__projects--each::before {
@@ -86,6 +106,10 @@
   background-color: $nudeColorDarker;
   @include transform(translateX(16px));
   @include transition (1s ease-in-out);
+  @include mQ($smallScreen) {
+    width: 250px;
+    height: 360px;
+  }
 }
 
 .gallery__projects--each {
@@ -96,6 +120,12 @@
   @include box-shadow($insetShadow);
   @include transition (1s ease-in-out);
   background-color: $nudeColorDarker;
+  @include mQ($smallScreen) {
+    width: 284px;
+    height:380px;
+    margin-bottom: 12px;
+    margin-left: 0px;
+  }
 }
 
 .gallery__projects--each::after {
@@ -107,13 +137,19 @@
   z-index: 1;
   position: absolute;
   @include transform(translate(33px, -394px));
-  z-index: 1;
   text-align: center;
   line-height: 394px;
   font-size: 4em;
   letter-spacing: 10px;
   text-shadow: $textShadow;
   @include transition (0.7s ease-in-out);
+  @include mQ($smallScreen) {
+    width: 220px;
+    height: 315px;
+    @include transform(translate(33px, -314px));
+    line-height: 315px;
+    font-size: 3em;
+  }
 }
 
 .gallery__projects--title {
@@ -132,12 +168,22 @@
   height: 70px;
   @include transition (0.7s ease-in-out);
   background-color: $mauve;
+  @include mQ($smallScreen) {
+    letter-spacing: 5px;
+    height: 40px;
+    line-height: 40px;
+    width: 286px;
+    font-size: 0.8em;
+  }
 }
 
 .gallery__projects--image {
   width: 300px;
   height: auto;
   @include transform(translateY(-14px));
+  @include mQ($smallScreen) {
+    width: 220px;
+  }
 }
 
 .gallery__projects--description {
@@ -146,6 +192,10 @@
   @include transform(translateY(-16px));
   letter-spacing: 2px;
   @include absolute_position_center;
+  @include mQ($smallScreen) {
+    font-size: 0.7em;
+    letter-spacing: 1px;
+  }
 
 }
 
@@ -172,6 +222,9 @@
   &:hover .gallery__projects--each::after {
     opacity: 1;
     letter-spacing: 20px;
+    @include mQ($smallScreen) {
+      letter-spacing: 0px;
+    }
   }
 }
 

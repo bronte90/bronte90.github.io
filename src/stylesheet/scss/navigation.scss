@@ -36,10 +36,12 @@
     cursor: pointer;
     opacity: 1;
     @include filter($svgShadow);
-    @include transform(translateX(-200px) rotate(180deg) scale(1.1));
+  }
   &:hover .nav__button--icon-open {
     text-shadow: $textShadow;
   }
+  @include mQ($smallScreen) {
+    @include transform(translateX(-120px) rotate(180deg));
   }
 }
 
@@ -96,6 +98,9 @@
   padding-left: 0;
   @include absolute_position_center;
   @include transform(translateY(150px));
+  @include mQ($smallScreen) {
+    @include transform(translateY(80px));
+  }
 }
 
 

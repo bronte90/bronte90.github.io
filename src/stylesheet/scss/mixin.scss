@@ -164,6 +164,9 @@
   text-shadow: $textShadow;
   @include absolute_position_center;
   z-index: 1;
+  @include mQ($smallScreen) {
+    font-size: 1.6em;
+  }
 }
 
 @mixin level_fonts {
@@ -179,6 +182,9 @@
   @include transform(translateY(500px) scale(1.5));
   text-align: center;
   width: 400px;
+  @include mQ($smallScreen) {
+    @include transform(translate(-30px, 500px) scale(1.2));
+  }
 }
 
 
@@ -190,6 +196,9 @@
   @include relative_position_center;
   @include filter($svgShadowTwo);
   width: 310px;
+  @include mQ($smallScreen) {
+    width: 220px;
+  }
 }
 
 @mixin about_subbox_main-before {
@@ -200,16 +209,9 @@
   opacity: 0.7;
   border-style: solid;
   border-width: 2px;
-}
-
-@mixin about_subbox_text {
-  font-family: $titleFont;
-  letter-spacing: 3px;
-  line-height: 27px;
-  padding-top: 4.8%;
-  color: $titleColor;
-  font-size: 0.8em;
-  @include absolute_position_center;
+  @include mQ($smallScreen) {
+    width: 230px;
+  }
 }
 
 @mixin about_subbox_number {
@@ -218,8 +220,11 @@
   font-size: 9em;
   @include absolute_position_center;
   z-index: 1;
-  width: 200px;
+  width: 180px;
   opacity: 0.7;
+  @include mQ($smallScreen) {
+    font-size: 6.5em;
+  }
 }
 
 //-----------------  A N I M A T I O N

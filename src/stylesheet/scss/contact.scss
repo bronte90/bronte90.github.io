@@ -19,6 +19,9 @@
   @include box-shadow($insetShadow);
   height: 400px;
   @include filter($svgShadowTwo);
+  @include mQ($smallScreen) {
+    width: 260px;
+  }
 }
 
 
@@ -41,6 +44,9 @@
   opacity: 0.3;
   margin: -109px;
   @include transform(skew(60deg,-20deg));
+  @include mQ($smallScreen) {
+    width: 80px;
+  }
 }
 
 //=====================================================================
@@ -50,6 +56,9 @@
   @include level_fonts;
   @include transform(translate(247px, 240px));
   color: $nudeTwoColor;
+  @include mQ($smallScreen) {
+    @include transform(translate(227px, 240px));
+  }
 }
 
 //=====================================================================
@@ -73,6 +82,9 @@
   @include transform(translateY(650px));
   z-index: 4;
   @include filter($svgShadowTwo);
+  @include mQ($smallScreen) {
+    width: 300px;
+  }
 }
 
 

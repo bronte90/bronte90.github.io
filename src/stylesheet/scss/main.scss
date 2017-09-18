@@ -35,4 +35,7 @@ body {
     @include absolute_position_center;
     @include transform(translate(-2px, -37px));
     @include filter($svgShadowTwo);
+    @include mQ($smallScreen) {
+      height: 610px;
+    }
 }

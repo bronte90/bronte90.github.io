@@ -5,6 +5,9 @@
   background-color: $nudeColorDarker;
   width: 100%;
   height: $containerHeight;
+  @include mQ($smallScreen) {
+    height: 500px;
+  }
 }
 
 //=====================================================================
@@ -16,6 +19,9 @@
   width: 80px;
   padding: 10px;
   z-index: 3;
+  @include mQ($smallScreen) {
+    width: 60px;
+  }
 }
 
 //=====================================================================
@@ -28,6 +34,9 @@
   display: block;
   z-index: 3;
   @include absolute_position_center;
+  @include mQ($smallScreen) {
+    @include transform(translate(5px, -5px));
+  }
 }
 
 .header__house--total {
@@ -42,6 +51,10 @@
   width: 170px;
   @include box-shadow($insetShadow);
   @include filter($svgShadowTwo);
+  @include mQ($smallScreen) {
+    @include transform(translateY(34px));
+    width: 127.75px;
+  }
 }
 
 .header__house--frame-box{
@@ -49,6 +62,11 @@
   width: 200px;
   height: 250px;
   @include box-shadow($insetShadow);
+  @include mQ($smallScreen) {
+    @include transform(translateY(33.5px));
+    width: 150px;
+    height: 190px;
+  }
 }
 
 .header__house--frame-boxTwo{
@@ -56,28 +74,47 @@
   width: 232px;
   height: 266px;
   @include box-shadow($insetShadow);
+  @include mQ($smallScreen) {
+    @include transform(translateY(33.5px));
+    width: 174px;
+    height: 211.5px;
+  }
 }
 
 .header__house--main {
   width: 270px;
   @include filter($svgShadow);
+  @include mQ($smallScreen) {
+    width: 202.5px;
+  }
 }
 
 .header__house--roof {
   width: 270px;
   @include filter($svgShadowTwo);
+  @include mQ($smallScreen) {
+    width: 202.5px;
+  }
 }
 
 .header__house--window-left {
   @include transform(translate(-26px, 122px));
   width: $windowSize;
   z-index: 2;
+  @include mQ($smallScreen) {
+    width: 39.6px;
+    @include transform(translate(-20.5px, 80px));
+  }
 }
 
 .header__house--window-right {
   @include transform(translate(26px, 122px));
   width: $windowSize;
   z-index: 2;
+  @include mQ($smallScreen) {
+    width: 39.6px;
+    @include transform(translate(19.40px, 80px));
+  }
 }
 
 //====================================================================
@@ -87,6 +124,9 @@
   @include level_fonts;
   @include transform(translate(8px, 60px));
   color: $nudeColor;
+  @include mQ($smallScreen) {
+    @include transform(translate(30px, -25px));
+  }
 }
 
 .header__title--name {
@@ -100,6 +140,10 @@
   text-align: center;
   padding: 20px;
   z-index: 1;
+  @include mQ($smallScreen) {
+    font-size: 1.5em;
+    @include transform(translateY(220px)rotateY(0));
+  }
 }
 
 //====================================================================
@@ -111,4 +155,7 @@
   height:200px;
   background-color: $nudeColorDarker;
   @include transform(skewY(-8deg) translateY(700px));
+  @include mQ($smallScreen) {
+    @include transform(skewY(-8deg) translateY(450px));
+  }
 }
