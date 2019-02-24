@@ -5,6 +5,7 @@
   background-color: $nudeColorDarker;
   width: 100%;
   height: $containerHeight;
+  position: relative;
   @include mQ($smallScreen) {
     height: 500px;
   }
@@ -152,10 +153,9 @@
 .header__transition {
   position: absolute;
   width: 100%;
-  height:200px;
+  height:25vw;
   background-color: $nudeColorDarker;
-  @include transform(skewY(-8deg) translateY(700px));
-  @include mQ($smallScreen) {
-    @include transform(skewY(-8deg) translateY(450px));
-  }
+  left: 0;
+  bottom: -140px;
+  @include transform(skewY(-8deg));
 }

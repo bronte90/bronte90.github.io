@@ -123,7 +123,8 @@
 .header {
   background-color: #634345;
   width: 100%;
-  height: 800px; }
+  height: 800px;
+  position: relative; }
   @media screen and (max-width: 487px) {
     .header {
       height: 500px; } }
@@ -356,20 +357,15 @@
 .header__transition {
   position: absolute;
   width: 100%;
-  height: 200px;
+  height: 25vw;
   background-color: #634345;
-  -moz-transform: skewY(-8deg) translateY(700px);
-  -o-transform: skewY(-8deg) translateY(700px);
-  -ms-transform: skewY(-8deg) translateY(700px);
-  -webkit-transform: skewY(-8deg) translateY(700px);
-  transform: skewY(-8deg) translateY(700px); }
-  @media screen and (max-width: 487px) {
-    .header__transition {
-      -moz-transform: skewY(-8deg) translateY(450px);
-      -o-transform: skewY(-8deg) translateY(450px);
-      -ms-transform: skewY(-8deg) translateY(450px);
-      -webkit-transform: skewY(-8deg) translateY(450px);
-      transform: skewY(-8deg) translateY(450px); } }
+  left: 0;
+  bottom: -140px;
+  -moz-transform: skewY(-8deg);
+  -o-transform: skewY(-8deg);
+  -ms-transform: skewY(-8deg);
+  -webkit-transform: skewY(-8deg);
+  transform: skewY(-8deg); }
 
 .nav {
   position: fixed;
@@ -444,7 +440,7 @@
   display: none; }
 
 .nav__list-container {
-  height: 800px;
+  height: 100vh;
   width: 100%;
   background-color: black;
   color: #f6f6f6;
@@ -457,11 +453,11 @@
   -ms-transition: 0.3s ease-in;
   -o-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
-  -moz-transform: translateY(-800px);
-  -o-transform: translateY(-800px);
-  -ms-transform: translateY(-800px);
-  -webkit-transform: translateY(-800px);
-  transform: translateY(-800px);
+  -moz-transform: translateY(-100vh);
+  -o-transform: translateY(-100vh);
+  -ms-transform: translateY(-100vh);
+  -webkit-transform: translateY(-100vh);
+  transform: translateY(-100vh);
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -1294,7 +1290,7 @@
 .gallery__transition {
   position: absolute;
   width: 100%;
-  height: 250px;
+  height: 28vw;
   background-color: #634345;
   z-index: 2;
   -moz-transform: skewY(-7deg) translateY(110px);

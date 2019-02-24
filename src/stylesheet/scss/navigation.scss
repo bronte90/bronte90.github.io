@@ -75,7 +75,7 @@
 //  M E N U   L I S T (after click)
 //=====================================================================
 .nav__list-container {
-  height: $containerHeight;
+  height: 100vh;
   width: 100%;
   background-color: black;
   color: $titleColor;
@@ -84,7 +84,7 @@
   font-size: 1.8em;
   opacity: 0.9;
   @include transition(0.3s ease-in);
-  @include transform(translateY(-800px));
+  @include transform(translateY(-100vh));
   @include absolute_position_center;
 }
 

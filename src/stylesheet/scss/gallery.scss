@@ -237,7 +237,7 @@
 .gallery__transition {
   position: absolute;
   width: 100%;
-  height:250px;
+  height:28vw;
   background-color: $nudeColorDarker;
   z-index: 2;
   @include transform(skewY(-7deg) translateY(110px));
