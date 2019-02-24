@@ -131,7 +131,7 @@
 //=========================================================================
 //       E R R O R
 //=========================================================================
-// Error function for Google Map API
+// Error function
 function errorMsg() {
     window.alert("Error: Failed to retrieve information.");
 }
@@ -602,5 +602,5 @@ var sceneMoonDrop = new ScrollMagic.Scene({
   offset: 50
 })
 .setTween(moonTl)
-// .addIndicators({name: "hi"})
+// .addIndicators({name: "indicate"})
 .addTo(controller);
